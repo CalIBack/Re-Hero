@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ggrb3n4hwi03"]
+
+[ext_resource type="Texture2D" uid="uid://d0ivdmx8rdnss" path="res://Sprites/PuertaAbierta.png" id="1_8hoif"]
+[ext_resource type="Script" uid="uid://dy8kjml1ct5u" path="res://Escenas/Plataformero/Interactivos/Puerta/puerta.gd" id="1_74y3s"]
+[ext_resource type="Texture2D" uid="uid://iuhg3gsm5d6e" path="res://Sprites/PuertaCerrada.png" id="2_74y3s"]
+[ext_resource type="Texture2D" uid="uid://cjs1oi33milbx" path="res://Sprites/PuertaBloqueada.png" id="3_wj8e8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj32t"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+size = Vector2(16, 32)
+
+[node name="Puerta" type="StaticBody2D" unique_id=770690103 node_paths=PackedStringArray("sprite_abierta", "sprite_cerrada", "sprite_candado", "area_deteccion", "bloqueo")]
+collision_mask = 32
+script = ExtResource("1_74y3s")
+sprite_abierta = NodePath("Abierta")
+sprite_cerrada = NodePath("Cerrada")
+sprite_candado = NodePath("Candado")
+area_deteccion = NodePath("Area2D")
+bloqueo = NodePath("Bloqueo")
+
+[node name="Abierta" type="Sprite2D" parent="." unique_id=1978677395]
+position = Vector2(0, -8)
+texture = ExtResource("1_8hoif")
+
+[node name="Cerrada" type="Sprite2D" parent="." unique_id=260748793]
+position = Vector2(0, -8)
+texture = ExtResource("2_74y3s")
+
+[node name="Candado" type="Sprite2D" parent="." unique_id=1549000576]
+position = Vector2(0, -8)
+texture = ExtResource("3_wj8e8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1588522990]
+collision_layer = 8
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1385218484]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_lj32t")
+
+[node name="Bloqueo" type="CollisionShape2D" parent="." unique_id=1925689024]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_orvxw")

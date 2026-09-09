@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://d27ik4nd0b3ey"]
+
+[ext_resource type="Script" uid="uid://emo4g55iyi6x" path="res://Escenas/Personaje/jugador.gd" id="1_g87qj"]
+[ext_resource type="SpriteFrames" uid="uid://x4wftholtq3n" path="res://Escenas/Personaje/new_sprite_frames.tres" id="1_uhnff"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g87qj"]
+radius = 9.0
+height = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj32t"]
+size = Vector2(2.7624297, 15.469607)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g87qj"]
+size = Vector2(15.469608, 17.40331)
+
+[node name="Jugador" type="CharacterBody2D" unique_id=1940612453]
+floor_max_angle = 1.0471976
+script = ExtResource("1_g87qj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2094957733]
+position = Vector2(0, -1)
+scale = Vector2(0.995, 0.995)
+shape = SubResource("CapsuleShape2D_g87qj")
+debug_color = Color(0, 18.892157, 18.892157, 0.5529412)
+
+[node name="Rotador" type="Node2D" parent="." unique_id=892150982]
+unique_name_in_owner = true
+
+[node name="Escudo Hitbox" type="Area2D" parent="Rotador" unique_id=925093830]
+position = Vector2(-6.4623485e-27, -2.842171e-14)
+scale = Vector2(1.81, 1.81)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotador/Escudo Hitbox" unique_id=1860883614]
+position = Vector2(-4.6961336, -1.1049724)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_lj32t")
+debug_color = Color(0, 14.383272, 0, 0.5058824)
+
+[node name="Ataque Hitbox2" type="Area2D" parent="Rotador" unique_id=624028076]
+modulate = Color(1, 0.09803922, 0.02745098, 1)
+self_modulate = Color(1, 0.25490198, 0.02745098, 1)
+position = Vector2(-6.4623485e-27, -2.842171e-14)
+scale = Vector2(1.81, 1.81)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotador/Ataque Hitbox2" unique_id=1448383193]
+position = Vector2(-3.0386753, -2.0718236)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_g87qj")
+debug_color = Color(13.891701, 0, 0, 0.5019608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rotador" unique_id=1407694860]
+unique_name_in_owner = true
+position = Vector2(-1, -1.1920929e-07)
+scale = Vector2(0.5623223, 0.5564804)
+sprite_frames = ExtResource("1_uhnff")
+animation = &"Bloqueo"
+frame_progress = 0.744369
+offset = Vector2(0, -10)

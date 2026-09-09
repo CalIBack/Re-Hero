@@ -1,0 +1,100 @@
+[gd_scene format=4 uid="uid://qhrx7aqob6ey"]
+
+[ext_resource type="TileSet" uid="uid://eddv30wato5g" path="res://Tilesets/demo.tres" id="1_kl5iw"]
+[ext_resource type="PackedScene" uid="uid://dmr2jn8q2apd5" path="res://Escenas/Plataformero/Solidos, Bordes y Fondos/bordes.tscn" id="2_kr33g"]
+[ext_resource type="PackedScene" uid="uid://gxdiudbnv4he" path="res://Escenas/Plataformero/Trampas/placa.tscn" id="4_bvuip"]
+[ext_resource type="PackedScene" uid="uid://dvg23ts2vd54q" path="res://Escenas/Plataformero/Trampas/trampa.tscn" id="5_3m1sc"]
+[ext_resource type="PackedScene" uid="uid://ca2xcwbc3pjbe" path="res://Escenas/Plataformero/salida.tscn" id="6_3m1sc"]
+
+[node name="Pantalla3" type="Node2D" unique_id=458890401]
+
+[node name="Fondo" type="TileMapLayer" parent="." unique_id=934251946]
+tile_map_data = PackedByteArray("AAAGAAgABAAJABEAAAAIAAgABAALABEAAAADAPr/BAANAAIAAAD4//n/BAAMAAQAABD4//r/BAAMAAUAABDz////BAAMAAYAAAD5//z/BAALAAUAAAD6//z/BAAMAAUAAAADAP7/BAAMAAIAAAAEAP7/BAAMAAIAAAALAPz/BAAMAAMAAAAKAAMABAANAAUAAAALAAQABAANAAYAAAAKAAUABAANAAcAAAAJAAYABAALAAcAAAAHAAUABAALAAcAAAD4/wEABAAMAAYAAAD2/wEABAAMAAYAAAD+//j/BAAIAAYAAAD+//n/BAAIAAcAAAAIAPn/BAANAAIAAAABAAAABAAMAAMAAAALAAMABAANAAUAAAALAAUABAANAAcAAAALAAEABAANAAYAAAALAAIABAANAAcAAAAKAAEABAANAAYAAAAKAAIABAANAAcAAAAKAAQABAANAAYAAAAIAP//BAAMAAMAAAALAPv/BAAMAAIAAAALAP3/BAAMAAQAAAAKAPz/BAANAAIAAAAKAP3/BAANAAIAAAAHAPn/BAANAAIAAAACAP//BAAMAAMAAAD6//v/BAAMAAQAAAD3//r/BAALAAUAAAD6//j/BAAMAAQAAAD6//n/BAALAAUAABDz//3/BAAMAAYAAAD0//7/BAANAAcAAAD3/wIABAANAAcAAAD5/wIABAANAAcAAAADAAIABAAKAAMAAAADAAMABAAKAAQAAAAEAAIABAALAAMAAAAEAAMABAALAAQAAAD2/wQABAABABEAAAAIAP7/BAAMAAIAAAAJAP7/BAANAAIAAAD+//b/BAACAAIAAAD///b/BAACAAIAAAAAAPb/BAACAAIAAAA=")
+tile_set = ExtResource("1_kl5iw")
+
+[node name="Bordes" parent="." unique_id=1702401186 instance=ExtResource("2_kr33g")]
+tile_map_data = PackedByteArray("AADw/wAABAADAAIAAAD//wkABAACAAEAAADx//b/BAACAAMAAADy//b/BAACAAMAAADz//b/BAACAAMAAAD0//b/BAACAAMAAAD1//b/BAACAAMAAAD2//b/BAACAAMAAAD3//b/BAACAAMAAAD4//b/BAACAAMAAAD5//b/BAACAAMAAAD6//b/BAACAAMAAAABAPb/BAAGAAIAACACAPb/BAACAAMAAAADAPb/BAACAAMAAAAEAPb/BAACAAMAAAAFAPb/BAACAAMAAAAGAPb/BAACAAMAAAAHAPb/BAACAAMAAAAIAPb/BAACAAMAAAAJAPb/BAACAAMAAAAKAPb/BAACAAMAAAALAPb/BAACAAMAAADw//b/BAAFAAIAADAPAAkABAADAAEAAADw/wkABAAGAAIAAAAPAAIABAABAAIAAAAPAAMABAABAAIAAAAPAAQABAABAAIAAAAPAAUABAABAAIAAAAOAAkABAACAAEAAAANAAkABAACAAEAAAAMAAkABAACAAEAAAALAAkABAACAAEAAAAKAAkABAACAAEAAAAJAAkABAACAAEAAAAIAAkABAACAAEAAAAHAAkABAACAAEAAAAGAAkABAACAAEAAAAFAAkABAACAAEAAAAEAAkABAACAAEAAAADAAkABAACAAEAAAACAAkABAACAAEAAAABAAkABAACAAEAAAAAAAkABAACAAEAAAD+/wkABAACAAEAAAD9/wkABAACAAEAAAD8/wkABAACAAEAAAD7/wkABAACAAEAAAD6/wkABAACAAEAAAD5/wkABAACAAEAAAD4/wkABAABAAEAAAD0/wkABAADAAEAAADz/wkABAACAAEAAADy/wkABAACAAEAAADx/wkABAACAAEAAADw/wgABAADAAIAAADw/wcABAADAAIAAADw/wYABAADAAIAAADw/wUABAADAAIAAADw/wQABAADAAIAAADw/wMABAADAAIAAADw/wIABAADAAIAAADw/wEABAADAAIAAADw////BAADAAIAAADw//j/BAADAAIAAADw//f/BAADAAIAAADw//n/BAADAAIAAADw//r/BAADAAIAAADw//v/BAADAAIAAADw//z/BAADAAIAAADw//3/BAADAAIAAADw//7/BAADAAIAAADx//7/BAACAAsAAADy//7/BAADAAsAAADz//7/BAACAAsAAAD0//7/BAADAAsAAAD1//7/BAACAAsAAAD2//7/BAADAAsAAAD3//7/BAACAAsAAAD4//7/BAADAAsAAAD5//7/BAACAAsAAAD6//7/BAADAAsAAAD7//7/BAACAAsAAAD8//7/BAACAAsAAAD9//7/BAADAAsAAAD+//7/BAACAAsAAAD///7/BAADAAsAAAAAAP7/BAACAAsAAAABAP7/BAADAAsAAAACAP7/BAACAAsAAAADAP7/BAADAAsAAAD7//b/BAACAAMAAAD8//b/BAACAAMAAAAMAPb/BAACAAMAAAANAPb/BAAFAAIAACANAPf/BAABAAIAAAANAPj/BAABAAIAAAANAPn/BAABAAIAAAANAPr/BAABAAIAAAANAPv/BAABAAIAAAANAPz/BAABAAIAAAANAP3/BAABAAIAAAD9//b/BAAFAAIAACA=")
+
+[node name="Solidos" type="TileMapLayer" parent="." unique_id=792180893]
+tile_map_data = PackedByteArray("AAD7/wYABAADAAIAAAAEAAIABAABAAMAAAAEAP//BAABAAIAAAAEAP7/BAABAAIAAAADAP//BAAEAAsAAAADAAAABAAEAAwAAAADAAEABAAEAAsAAAADAAIABAAEAAwAAAAPAAMABAABAAIAAAAPAAQABAABAAIAAAAPAAUABAABAAIAAADx/wAABAABAAsAAADx////BAABAAwAAADx//7/BAABAAwAAAADAP7/BAAEAAsAAAAEAAEABAABAAIAAAAFAAIABAACAAMAAAAGAAIABAACAAMAAAAHAAIABAACAAMAAAAIAAIABAACAAMAAAAJAAIABAACAAMAAAAKAAIABAACAAMAAAALAAIABAACAAMAAAAMAAIABAACAAMAAAANAAIABAACAAMAAAAOAAIABAACAAMAAADx/wIABAABAAsAAADx/wMABAABAAsAAADx/wQABAABAAwAAAD7/wUABAADAAEAAADx/wUABAACAAEAAADy/wUABAACAAEAAADz/wUABAACAAEAAAD0/wUABAACAAEAAAD1/wUABAACAAEAAAD2/wUABAACAAEAAAD3/wUABAACAAEAAAD4/wUABAACAAEAAAD5/wUABAACAAEAAAD6/wUABAACAAEAAADx/wEABAABAAwAAAD1/wEABAACAAEAAAD2/wEABAACAAEAAAD3/wEABAACAAEAAAD4/wEABAACAAEAAAD5/wEABAACAAEAAAD6/wEABAACAAEAAAD7/wEABAACAAEAAAD8/wEABAACAAEAAAD9/wEABAACAAEAAAD+/wEABAACAAEAAAD//wEABAACAAEAAAD0/wEABAAEAAwAAAD1/wIABAACAAsAAAD2/wIABAACAAsAAAD3/wIABAADAAsAAAD4/wIABAACAAsAAAD5/wIABAADAAsAAAD6/wIABAACAAsAAAD7/wIABAADAAsAAAD8/wIABAACAAsAAAD9/wIABAADAAsAAAD+/wIABAACAAsAAAD//wIABAACAAsAABAAAAEABAABAAsAAADx//3/BAACAAEAAADy//3/BAACAAEAAADz//3/BAACAAEAAAD0//3/BAACAAEAAAD1//3/BAACAAEAAAD2//3/BAACAAEAAAD3//3/BAACAAEAAAD4//3/BAACAAEAAAD5//3/BAACAAEAAAD6//3/BAACAAEAAAD7//3/BAACAAEAAAD8//3/BAACAAEAAAD9//3/BAACAAEAAAD+//3/BAACAAEAAAD///3/BAACAAEAAAAAAP3/BAACAAEAAAABAP3/BAACAAEAAAACAP3/BAACAAEAAAADAP3/BAACAAEAAAAEAP3/BAACAAEAAAAFAP3/BAACAAEAAAAGAP3/BAACAAEAAAAHAP3/BAACAAEAAAAEAAAABAABAAIAAAD5//f/BAAFAAMAAAD5//z/BAAFAAEAAAD6//f/BAACAAsAAAD6//z/BAACAAwAAAD7//f/BAADAAsAAAD7//z/BAADAAwAAAD8//z/BAACAAwAAAD9//z/BAADAAwAAAD+//z/BAACAAwAAAD///z/BAACAAwAAAAAAPz/BAADAAwAAAABAPz/BAACAAwAAAACAPf/BAADAAsAAAACAPz/BAADAAwAAAADAPf/BAACAAsAAAADAPz/BAACAAwAAAAEAPf/BAADAAsAAAAEAPz/BAADAAwAAAD8//f/BAACAAsAAAD8//v/BAACAAEAAAD///n/BAACAAEAAAACAPv/BAACAAEAAAAFAPf/BAAGAAMAAAAFAPz/BAAGAAEAAAANAPf/BAABAAIAAAANAP7/BAABAAMAAAAOAP7/BAACAAMAAAAIAP3/BAACAAEAAAAJAP3/BAAKAAUAAAA=")
+tile_set = ExtResource("1_kl5iw")
+
+[node name="Interactivos" type="TileMapLayer" parent="." unique_id=2064489702]
+tile_map_data = PackedByteArray("AAAKAAgAAQAAAAAACwDx/wgAAQAAAAAACwD7/wgAAQAAAAAADQD+/wAAAQAAAAAACwD6/wQAAQAAAAAACwDy//z/AQAAAAAADgAJAAEAAQAAAAAAAwAJAAAAAQAAAAAABwAJAP//AQAAAAAABwAJAP7/AQAAAAAABwAJAP3/AQAAAAAACAD0//z/AQAAAAAADgD2//z/AQAAAAAADgDz//r/AQAAAAAADwD1//r/AQAAAAAADwAGAP//AQAAAAAADwD///b/AQAAAAAADwA=")
+tile_set = ExtResource("1_kl5iw")
+
+[node name="Fondo2" type="TileMapLayer" parent="." unique_id=1369034155]
+z_index = 4
+tile_map_data = PackedByteArray("AAD+//b/BAACAAIAAAD///b/BAACAAIAAAAAAPb/BAACAAIAAAA=")
+tile_set = ExtResource("1_kl5iw")
+
+[node name="Trampas" type="Node2D" parent="." unique_id=1665505278]
+
+[node name="Trampa1" type="Node2D" parent="Trampas" unique_id=1869721892]
+
+[node name="Placa" parent="Trampas/Trampa1" unique_id=147101233 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_bvuip")]
+position = Vector2(-104, 136)
+trampas_a_activar = [NodePath("../Trampa")]
+
+[node name="Trampa" parent="Trampas/Trampa1" unique_id=1166551045 instance=ExtResource("5_3m1sc")]
+position = Vector2(-248, 120)
+
+[node name="Trampa2" type="Node2D" parent="Trampas" unique_id=1319402408]
+
+[node name="Placa" parent="Trampas/Trampa2" unique_id=1125838944 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_bvuip")]
+position = Vector2(216, 24)
+trampas_a_activar = [NodePath("../Trampa")]
+
+[node name="Trampa" parent="Trampas/Trampa2" unique_id=193198357 instance=ExtResource("5_3m1sc")]
+position = Vector2(72, 24)
+
+[node name="Trampa3" type="Node2D" parent="Trampas" unique_id=16461935]
+
+[node name="Placa" parent="Trampas/Trampa3" unique_id=406229113 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_bvuip")]
+position = Vector2(-88, 8)
+trampas_a_activar = [NodePath("../Trampa"), NodePath("../Trampa2"), NodePath("../Trampa3"), NodePath("../Trampa4"), NodePath("../Trampa5"), NodePath("../Trampa6")]
+
+[node name="Trampa" parent="Trampas/Trampa3" unique_id=260357998 instance=ExtResource("5_3m1sc")]
+position = Vector2(-248, -120)
+
+[node name="Trampa2" parent="Trampas/Trampa3" unique_id=1116635549 instance=ExtResource("5_3m1sc")]
+position = Vector2(-248, -104)
+
+[node name="Trampa3" parent="Trampas/Trampa3" unique_id=1245713904 instance=ExtResource("5_3m1sc")]
+position = Vector2(-248, -88)
+
+[node name="Trampa8" parent="Trampas/Trampa3" unique_id=1440870933 instance=ExtResource("5_3m1sc")]
+position = Vector2(-248, -72)
+
+[node name="Trampa4" parent="Trampas/Trampa3" unique_id=836265498 instance=ExtResource("5_3m1sc")]
+position = Vector2(216, -120)
+dispara_izquierda = true
+
+[node name="Trampa5" parent="Trampas/Trampa3" unique_id=94064000 instance=ExtResource("5_3m1sc")]
+position = Vector2(216, -104)
+dispara_izquierda = true
+
+[node name="Trampa6" parent="Trampas/Trampa3" unique_id=1404750792 instance=ExtResource("5_3m1sc")]
+position = Vector2(216, -88)
+dispara_izquierda = true
+
+[node name="Trampa7" parent="Trampas/Trampa3" unique_id=8484652 instance=ExtResource("5_3m1sc")]
+position = Vector2(216, -72)
+dispara_izquierda = true
+
+[node name="Camara" type="Marker2D" parent="." unique_id=913840494]
+
+[node name="Salidas" type="Node2D" parent="." unique_id=1707510601]
+
+[node name="Salida1" parent="Salidas" unique_id=62743793 instance=ExtResource("6_3m1sc")]
+position = Vector2(-152, 156)
+rotation = 1.5707964
+nombre_pantalla_destino = "Pantalla2"
+
+[node name="Salida2" parent="Salidas" unique_id=284640097 instance=ExtResource("6_3m1sc")]
+position = Vector2(252, 120)
+nombre_pantalla_destino = "Pantalla4"
+
+[node name="Salida3" parent="Salidas" unique_id=686041663 instance=ExtResource("6_3m1sc")]
+position = Vector2(252, 8)
+nombre_pantalla_destino = "Pantalla4"

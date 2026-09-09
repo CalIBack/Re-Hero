@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bquq1luf3ds78"]
+
+[ext_resource type="Texture2D" uid="uid://bp1svonedpge8" path="res://Sprites/CofreCerrado.png" id="1_brvda"]
+[ext_resource type="Script" uid="uid://cgegjfq5710rp" path="res://Escenas/Plataformero/Interactivos/Cofre/cofre.gd" id="1_vtphl"]
+[ext_resource type="PackedScene" uid="uid://bbsw5qbvdg20b" path="res://Escenas/Plataformero/Interactivos/EsquirlaEsencia/esquirla.tscn" id="2_lu5ts"]
+[ext_resource type="Texture2D" uid="uid://dt7p1vuh1yomb" path="res://Sprites/CofreAbierto.png" id="2_ucwla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr2mr"]
+size = Vector2(16, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brvda"]
+size = Vector2(32, 24)
+
+[node name="Cofre" type="RigidBody2D" unique_id=36336866 node_paths=PackedStringArray("sprite_abierto", "sprite_cerrado", "area_deteccion", "spawn_punto")]
+position = Vector2(0, -3)
+collision_mask = 31
+sleeping = true
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_vtphl")
+sprite_abierto = NodePath("Abierto")
+sprite_cerrado = NodePath("Cerrado")
+area_deteccion = NodePath("Area2D")
+spawn_punto = NodePath("SpawnEsencia")
+esquirla_escena = ExtResource("2_lu5ts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1404874319]
+texture_filter = 1
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_qr2mr")
+
+[node name="Abierto" type="Sprite2D" parent="." unique_id=1727266777]
+visible = false
+texture_filter = 1
+position = Vector2(1.7881393e-07, 0.047619104)
+scale = Vector2(1, 1.0059524)
+texture = ExtResource("2_ucwla")
+
+[node name="Cerrado" type="Sprite2D" parent="." unique_id=1204046114]
+texture_filter = 1
+scale = Vector2(1, 1.0059524)
+texture = ExtResource("1_brvda")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=478905477]
+collision_layer = 8
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=559063771]
+texture_filter = 1
+shape = SubResource("RectangleShape2D_brvda")
+
+[node name="SpawnEsencia" type="Marker2D" parent="." unique_id=1756861658]
+position = Vector2(0, -2)

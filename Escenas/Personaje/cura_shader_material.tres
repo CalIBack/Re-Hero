@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d2ocyvw7essfv"]
+
+[ext_resource type="Shader" uid="uid://bd4wlp54rifwn" path="res://Escenas/Personaje/daño_shader.tres" id="1_5xmm1"]
+
+[resource]
+shader = ExtResource("1_5xmm1")

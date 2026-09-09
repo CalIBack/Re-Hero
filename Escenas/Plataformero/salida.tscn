@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ca2xcwbc3pjbe"]
+
+[ext_resource type="Script" uid="uid://cg1fpt4hdvlgg" path="res://Escenas/Plataformero/salida.gd" id="1_klhji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+size = Vector2(8, 48)
+
+[node name="Salida" type="Area2D" unique_id=62743793]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_klhji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=461482458]
+shape = SubResource("RectangleShape2D_orvxw")

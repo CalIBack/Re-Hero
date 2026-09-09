@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bntfqc55nwmfq"]
+
+[ext_resource type="Texture2D" uid="uid://brskrv2f0jvgs" path="res://Sprites/lampara.png" id="1_ua80c"]
+
+[node name="Lampara" type="Node2D" unique_id=179899171]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1727266777]
+position = Vector2(3.7252903e-09, 8.195639e-08)
+scale = Vector2(0.7559524, 0.75000006)
+texture = ExtResource("1_ua80c")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0fhic2t36g6v"]
+
+[ext_resource type="Script" uid="uid://dtuu5by6oc028" path="res://Escenas/Plataformero/entrada.gd" id="1_885s4"]
+
+[node name="Entrada" type="Marker2D" unique_id=801765561]
+script = ExtResource("1_885s4")

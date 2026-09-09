@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dlk3qs4gr2u80"]
+
+[ext_resource type="Texture2D" uid="uid://blmqpjlobtqhs" path="res://Sprites/Urna.png" id="1_3wm2g"]
+[ext_resource type="Script" uid="uid://1dxkec6osibq" path="res://Escenas/Plataformero/Interactivos/Urna/urna.gd" id="1_e0eah"]
+[ext_resource type="PackedScene" uid="uid://bbsw5qbvdg20b" path="res://Escenas/Plataformero/Interactivos/EsquirlaEsencia/esquirla.tscn" id="2_o4djo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr2mr"]
+size = Vector2(10, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wm2g"]
+size = Vector2(10, 11)
+
+[node name="Urna" type="RigidBody2D" unique_id=36336866 node_paths=PackedStringArray("area_deteccion", "spawn_punto")]
+collision_layer = 16
+collision_mask = 23
+lock_rotation = true
+script = ExtResource("1_e0eah")
+area_deteccion = NodePath("Area2D")
+da_loot = true
+esquirla_escena = ExtResource("2_o4djo")
+spawn_punto = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=27883390]
+position = Vector2(2.384186e-07, 2.5)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_qr2mr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1727266777]
+position = Vector2(-4.541306e-07, 2.5)
+scale = Vector2(0.47619048, 0.52380955)
+texture = ExtResource("1_3wm2g")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=478905477]
+collision_layer = 16
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1404874319]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_3wm2g")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1650203472]

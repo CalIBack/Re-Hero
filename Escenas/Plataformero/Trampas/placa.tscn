@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://gxdiudbnv4he"]
+
+[ext_resource type="Script" uid="uid://cs50tsl08wnfv" path="res://Escenas/Plataformero/Trampas/placa.gd" id="1_gxarr"]
+[ext_resource type="Texture2D" uid="uid://ns4pv0q5ixxm" path="res://Sprites/Placa.png" id="2_wlg18"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+size = Vector2(10, 2)
+
+[node name="Placa" type="Area2D" unique_id=147101233]
+collision_layer = 8
+collision_mask = 32
+script = ExtResource("1_gxarr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=763916316]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_orvxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=101476831]
+unique_name_in_owner = true
+texture = ExtResource("2_wlg18")

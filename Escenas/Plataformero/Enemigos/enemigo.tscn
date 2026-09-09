@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Escenas/Plataformero/Enemigos/enemigo.gd" id="1_enemigo"]
+[ext_resource type="SpriteFrames" path="res://Escenas/Combate/enemigo_sprite_frames.tres" id="2_frames"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemigo"]
+size = Vector2(16, 26)
+
+[node name="Enemigo" type="Area2D"]
+collision_layer = 128
+collision_mask = 32
+script = ExtResource("1_enemigo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_enemigo")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5623223, 0.5564804)
+offset = Vector2(0, -10)
+sprite_frames = ExtResource("2_frames")
+animation = &"Idle"

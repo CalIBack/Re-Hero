@@ -1,0 +1,262 @@
+[gd_scene format=3 uid="uid://d4a4c4j2yn5ci"]
+
+[ext_resource type="Script" uid="uid://daryia7c4gm01" path="res://Escenas/Combate/combate.gd" id="1_combate"]
+[ext_resource type="SpriteFrames" uid="uid://x4wftholtq3n" path="res://Escenas/Personaje/new_sprite_frames.tres" id="2_frames"]
+[ext_resource type="Texture2D" uid="uid://bl1htya6ihpqn" path="res://Sprites/FondoCombate.png" id="3_fondo"]
+[ext_resource type="SpriteFrames" uid="uid://bodclpoot12vw" path="res://Escenas/Combate/enemigo_sprite_frames.tres" id="4_enemigo_frames"]
+[ext_resource type="Texture2D" uid="uid://dudhk66auia10" path="res://Sprites/Habilidades/HabilidadBasico.png" id="5_basico"]
+[ext_resource type="Texture2D" uid="uid://buemejcpcd2ba" path="res://Sprites/Habilidades/HabilidadFuerte.png" id="6_fuerte"]
+[ext_resource type="Texture2D" uid="uid://c0u8yjfu2l1g1" path="res://Sprites/Habilidades/HabilidadCuracion.png" id="7_curacion"]
+[ext_resource type="Texture2D" uid="uid://c4hljuo8qnvjj" path="res://Sprites/Habilidades/HabilidadBloqueada.png" id="8_bloqueada"]
+[ext_resource type="Texture2D" uid="uid://bphiqh3srqryf" path="res://Sprites/Habilidades/TableroFinal.png" id="9_tablero"]
+[ext_resource type="AudioStream" path="res://Audio/Ataque.wav" id="10_sfx_ataque"]
+[ext_resource type="AudioStream" path="res://Audio/Danio.wav" id="11_sfx_danio"]
+
+[node name="Combate" type="Node2D" unique_id=83304278]
+script = ExtResource("1_combate")
+sfx_ataque = ExtResource("10_sfx_ataque")
+sfx_danio = ExtResource("11_sfx_danio")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=1255468364]
+texture_filter = 1
+position = Vector2(306, 210)
+scale = Vector2(0.4233871, 0.4233871)
+texture = ExtResource("3_fondo")
+
+[node name="Escenario" type="Node2D" parent="." unique_id=785839574]
+
+[node name="Jugador" type="AnimatedSprite2D" parent="Escenario" unique_id=1169605032]
+position = Vector2(150, 278)
+scale = Vector2(-1.4697802, 1.5156248)
+sprite_frames = ExtResource("2_frames")
+animation = &"Idle"
+
+[node name="Enemigo" type="AnimatedSprite2D" parent="Escenario" unique_id=772742397]
+position = Vector2(459.00003, 272)
+scale = Vector2(1.625, 1.676)
+sprite_frames = ExtResource("4_enemigo_frames")
+animation = &"Idle"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1503492538]
+
+[node name="PanelJugador" type="VBoxContainer" parent="HUD" unique_id=1698788389]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 118.0
+offset_bottom = 46.0
+theme_override_constants/separation = 2
+
+[node name="LabelNombreJugador" type="Label" parent="HUD/PanelJugador" unique_id=1547854227]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Jugador"
+
+[node name="BarraVidaJugador" type="ProgressBar" parent="HUD/PanelJugador" unique_id=2061850387]
+unique_name_in_owner = true
+modulate = Color(0.9, 0.2, 0.2, 1)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="LabelHPJugador" type="Label" parent="HUD/PanelJugador" unique_id=17689004]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "100 / 100"
+
+[node name="PanelEnemigo" type="VBoxContainer" parent="HUD" unique_id=1122558800]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -118.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 46.0
+theme_override_constants/separation = 2
+
+[node name="LabelNombreEnemigo" type="Label" parent="HUD/PanelEnemigo" unique_id=1891187878]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Enemigo"
+
+[node name="BarraVidaEnemigo" type="ProgressBar" parent="HUD/PanelEnemigo" unique_id=1115892696]
+unique_name_in_owner = true
+modulate = Color(0.9, 0.2, 0.2, 1)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="LabelHPEnemigo" type="Label" parent="HUD/PanelEnemigo" unique_id=918632730]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "100 / 100"
+
+[node name="LabelMensaje" type="Label" parent="HUD" unique_id=1697434629]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 62.0
+offset_bottom = 82.0
+horizontal_alignment = 1
+
+[node name="LabelBanner" type="Label" parent="HUD" unique_id=921606227]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 110.0
+offset_bottom = 150.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TableroHabilidades" type="TextureRect" parent="HUD" unique_id=1132027632]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.0
+offset_top = 342.0
+offset_right = 202.0
+offset_bottom = 404.0
+grow_horizontal = 2
+texture = ExtResource("9_tablero")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BarraHabilidades" type="HBoxContainer" parent="HUD" unique_id=215297001]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -66.0
+offset_right = -9.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BotonHabilidad1" type="TextureButton" parent="HUD/BarraHabilidades" unique_id=284177744]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("5_basico")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LabelCooldown1" type="Label" parent="HUD/BarraHabilidades/BotonHabilidad1" unique_id=672328346]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonHabilidad2" type="TextureButton" parent="HUD/BarraHabilidades" unique_id=394620721]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("6_fuerte")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LabelCooldown2" type="Label" parent="HUD/BarraHabilidades/BotonHabilidad2" unique_id=2011262120]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonHabilidad3" type="TextureButton" parent="HUD/BarraHabilidades" unique_id=23702092]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("7_curacion")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LabelCooldown3" type="Label" parent="HUD/BarraHabilidades/BotonHabilidad3" unique_id=1054006721]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonHabilidad4" type="TextureButton" parent="HUD/BarraHabilidades" unique_id=913553069]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("8_bloqueada")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="PanelPosesion" type="PanelContainer" parent="HUD" unique_id=545605113]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -55.0
+offset_right = 110.0
+offset_bottom = 55.0
+
+[node name="VBoxPosesion" type="VBoxContainer" parent="HUD/PanelPosesion" unique_id=1000116426]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LabelPosesion" type="Label" parent="HUD/PanelPosesion/VBoxPosesion" unique_id=1028844060]
+layout_mode = 2
+text = "¿Querés poseer el cuerpo del enemigo?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BotonesPosesion" type="HBoxContainer" parent="HUD/PanelPosesion/VBoxPosesion" unique_id=1790015739]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="BotonPoseerSi" type="Button" parent="HUD/PanelPosesion/VBoxPosesion/BotonesPosesion" unique_id=807238783]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sí"
+
+[node name="BotonPoseerNo" type="Button" parent="HUD/PanelPosesion/VBoxPosesion/BotonesPosesion" unique_id=801618936]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No"

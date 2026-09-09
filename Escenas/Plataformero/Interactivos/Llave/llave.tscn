@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bfx8a4e5yt5qi"]
+
+[ext_resource type="Script" uid="uid://dksftjnt5l35r" path="res://Escenas/Plataformero/Interactivos/Llave/llave.gd" id="1_blgul"]
+[ext_resource type="Texture2D" uid="uid://c75e2ceg7y05" path="res://Sprites/Llave.png" id="1_si6n6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+size = Vector2(16, 16)
+
+[node name="Llave" type="Area2D" unique_id=1931802016 node_paths=PackedStringArray("sprite")]
+collision_layer = 8
+collision_mask = 32
+input_pickable = false
+script = ExtResource("1_blgul")
+sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=322806028]
+shape = SubResource("RectangleShape2D_orvxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1600151614]
+texture = ExtResource("1_si6n6")

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bbsw5qbvdg20b"]
+
+[ext_resource type="Script" uid="uid://chclhagyoymqo" path="res://Escenas/Plataformero/Interactivos/EsquirlaEsencia/esquirla.gd" id="1_5wiq2"]
+[ext_resource type="Texture2D" uid="uid://dp7ecj6y1gi0g" path="res://Sprites/Esencia.png" id="1_kbn7i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj32t"]
+size = Vector2(8, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+size = Vector2(8, 12)
+
+[node name="EsquirlaEsencia" type="RigidBody2D" unique_id=1172827106]
+z_index = 5
+collision_layer = 256
+collision_mask = 31
+lock_rotation = true
+script = ExtResource("1_5wiq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1143067492]
+shape = SubResource("RectangleShape2D_lj32t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1600151614]
+unique_name_in_owner = true
+position = Vector2(2.3841858e-07, 2.3841858e-07)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_kbn7i")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1603335514]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=322806028]
+shape = SubResource("RectangleShape2D_orvxw")

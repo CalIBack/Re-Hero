@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d1x66p5ohfp4c"]
+
+[ext_resource type="Script" uid="uid://d14pru352pw3s" path="res://Escenas/main.gd" id="1_j5xpj"]
+[ext_resource type="AudioStream" uid="uid://b34v0es06obyn" path="res://Audio/DungeonBG.mp3" id="2_mbvap"]
+[ext_resource type="PackedScene" uid="uid://d27ik4nd0b3ey" path="res://Escenas/Personaje/jugador.tscn" id="2_sem21"]
+[ext_resource type="PackedScene" uid="uid://jmrouxttxlpm" path="res://Escenas/Hud.tscn" id="5_3yqt6"]
+[ext_resource type="PackedScene" uid="uid://cmk10ire38f3x" path="res://Escenas/Plataformero/camera_2d.tscn" id="7_bgy44"]
+[ext_resource type="PackedScene" uid="uid://tw7dcfkr266s" path="res://Escenas/Pantallas/Esquema.tscn" id="9_a5a2i"]
+
+[node name="Main" type="Node2D" unique_id=2133648367]
+script = ExtResource("1_j5xpj")
+musica_fondo = ExtResource("2_mbvap")
+
+[node name="Camera2D" parent="." unique_id=1049851854 instance=ExtResource("7_bgy44")]
+unique_name_in_owner = true
+
+[node name="Region" parent="." unique_id=1927998601 instance=ExtResource("9_a5a2i")]
+unique_name_in_owner = true
+
+[node name="Jugador" parent="." unique_id=1940612453 instance=ExtResource("2_sem21")]
+unique_name_in_owner = true
+position = Vector2(-77, 337)
+
+[node name="Hud" parent="." unique_id=1422294051 instance=ExtResource("5_3yqt6")]

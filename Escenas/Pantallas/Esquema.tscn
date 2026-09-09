@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://tw7dcfkr266s"]
+
+[ext_resource type="PackedScene" uid="uid://ct3iwwrpx5gxf" path="res://Escenas/Pantallas/pantalla_1.tscn" id="1_gl2xl"]
+[ext_resource type="PackedScene" uid="uid://eay6kqcyyf25" path="res://Escenas/Pantallas/pantalla_2.tscn" id="2_v10u1"]
+[ext_resource type="PackedScene" uid="uid://qhrx7aqob6ey" path="res://Escenas/Pantallas/pantalla_3.tscn" id="3_ofv6v"]
+[ext_resource type="PackedScene" uid="uid://b6wjodqa71ngf" path="res://Escenas/Pantallas/pantalla_4.tscn" id="4_47c5h"]
+[ext_resource type="PackedScene" uid="uid://bvqsq2j4tm1th" path="res://Escenas/Pantallas/pantalla_5.tscn" id="5_sgff0"]
+
+[node name="Node2D" type="Node2D" unique_id=1927998601]
+
+[node name="Pantalla1" parent="." unique_id=458890401 instance=ExtResource("1_gl2xl")]
+position = Vector2(96, 208)
+
+[node name="Pantalla2" parent="." unique_id=981770813 instance=ExtResource("2_v10u1")]
+position = Vector2(-400, 80)
+
+[node name="Pantalla3" parent="." unique_id=83180807 instance=ExtResource("3_ofv6v")]
+position = Vector2(-112, -224)
+
+[node name="Pantalla4" parent="." unique_id=128641763 instance=ExtResource("4_47c5h")]
+position = Vector2(384, -96)
+
+[node name="Pantalla 5" parent="." unique_id=805901518 instance=ExtResource("5_sgff0")]

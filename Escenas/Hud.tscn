@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://jmrouxttxlpm"]
+
+[ext_resource type="Script" uid="uid://cdes1e5k5dj8b" path="res://Escenas/hud.gd" id="1_qlp27"]
+[ext_resource type="Texture2D" uid="uid://bccocvfg1iee2" path="res://Sprites/CorazonLleno.png" id="2_8o3mk"]
+[ext_resource type="Texture2D" uid="uid://b8dnslm5otimv" path="res://Sprites/CorazonMedio.png" id="3_abl24"]
+[ext_resource type="Texture2D" uid="uid://cquljujsww4ao" path="res://Sprites/CorazonVacio.png" id="4_1en0x"]
+[ext_resource type="Texture2D" uid="uid://dc3aiffuyvga8" path="res://Sprites/EscudoLleno.png" id="5_pgcbu"]
+[ext_resource type="Texture2D" uid="uid://mbtooldw70j1" path="res://Sprites/EscudoVacio.png" id="6_qug0x"]
+[ext_resource type="Texture2D" uid="uid://dp7ecj6y1gi0g" path="res://Sprites/Esencia.png" id="7_1en0x"]
+[ext_resource type="Texture2D" uid="uid://c75e2ceg7y05" path="res://Sprites/Llave.png" id="8_pgcbu"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1422294051]
+script = ExtResource("1_qlp27")
+corazon_lleno = ExtResource("2_8o3mk")
+corazon_medio = ExtResource("3_abl24")
+corazon_vacio = ExtResource("4_1en0x")
+escudo_lleno = ExtResource("5_pgcbu")
+escudo_vacio = ExtResource("6_qug0x")
+
+[node name="Control" type="Control" parent="." unique_id=854224521]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MargenIzquierdo" type="MarginContainer" parent="Control" unique_id=1454416125]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Contenedor" type="VBoxContainer" parent="Control/MargenIzquierdo" unique_id=1740062265]
+layout_mode = 2
+
+[node name="FilaVida" type="HBoxContainer" parent="Control/MargenIzquierdo/Contenedor" unique_id=188111972]
+layout_mode = 2
+
+[node name="FilaEscudo" type="HBoxContainer" parent="Control/MargenIzquierdo/Contenedor" unique_id=2074283691]
+layout_mode = 2
+
+[node name="MargenDerecho" type="MarginContainer" parent="Control" unique_id=1070650925]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="Contenedor" type="VBoxContainer" parent="Control/MargenDerecho" unique_id=1444800946]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="FilaEsencia" type="HBoxContainer" parent="Control/MargenDerecho/Contenedor" unique_id=64878635]
+layout_mode = 2
+
+[node name="IconoEsencia" type="TextureRect" parent="Control/MargenDerecho/Contenedor/FilaEsencia" unique_id=145177758]
+layout_mode = 2
+texture = ExtResource("7_1en0x")
+
+[node name="Esencia" type="Label" parent="Control/MargenDerecho/Contenedor/FilaEsencia" unique_id=1687844117]
+layout_mode = 2
+
+[node name="FilaLlave" type="HBoxContainer" parent="Control/MargenDerecho/Contenedor" unique_id=1654973651]
+layout_mode = 2
+
+[node name="IconoLlave" type="TextureRect" parent="Control/MargenDerecho/Contenedor/FilaLlave" unique_id=812246164]
+layout_mode = 2
+texture = ExtResource("8_pgcbu")
+
+[node name="Llaves" type="Label" parent="Control/MargenDerecho/Contenedor/FilaLlave" unique_id=538100549]
+layout_mode = 2

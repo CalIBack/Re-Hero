@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c1oqnw1ovoas0"]
+
+[ext_resource type="Script" uid="uid://bvn014axp7hed" path="res://Escenas/Plataformero/Trampas/dardo.gd" id="1_6iytf"]
+[ext_resource type="Texture2D" uid="uid://weu3cmfmlbyg" path="res://Sprites/Dardo.png" id="1_u4nuq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+size = Vector2(6, 4)
+
+[node name="Dardo" type="Area2D" unique_id=147101233]
+collision_layer = 4
+collision_mask = 96
+script = ExtResource("1_6iytf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=763916316]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_orvxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=101476831]
+texture = ExtResource("1_u4nuq")
