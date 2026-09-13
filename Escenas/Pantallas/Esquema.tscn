@@ -4,7 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://eay6kqcyyf25" path="res://Escenas/Pantallas/pantalla_2.tscn" id="2_v10u1"]
 [ext_resource type="PackedScene" uid="uid://qhrx7aqob6ey" path="res://Escenas/Pantallas/pantalla_3.tscn" id="3_ofv6v"]
 [ext_resource type="PackedScene" uid="uid://b6wjodqa71ngf" path="res://Escenas/Pantallas/pantalla_4.tscn" id="4_47c5h"]
-[ext_resource type="PackedScene" uid="uid://bvqsq2j4tm1th" path="res://Escenas/Pantallas/pantalla_5.tscn" id="5_sgff0"]
+[ext_resource type="PackedScene" uid="uid://bvqsq2j4tm1th" path="res://Escenas/Pantallas/pantalla_s1.tscn" id="5_sgff0"]
+[ext_resource type="PackedScene" uid="uid://rkln1o4iusgi" path="res://Escenas/Pantallas/pantalla_5.tscn" id="6_v10u1"]
+[ext_resource type="PackedScene" uid="uid://dg6rjchv3odch" path="res://Escenas/Pantallas/pantalla_6.tscn" id="7_47c5h"]
+[ext_resource type="PackedScene" uid="uid://c36ks6eefkucc" path="res://Escenas/Pantallas/pantalla_7.tscn" id="8_sgff0"]
+[ext_resource type="PackedScene" uid="uid://dqht53bp6377m" path="res://Escenas/Pantallas/pantalla_8.tscn" id="9_84bil"]
+[ext_resource type="PackedScene" uid="uid://2ijni7nguf37" path="res://Escenas/Pantallas/pantalla_9.tscn" id="9_sgff0"]
 
 [node name="Node2D" type="Node2D" unique_id=1927998601]
 
@@ -20,4 +25,19 @@ position = Vector2(-112, -224)
 [node name="Pantalla4" parent="." unique_id=128641763 instance=ExtResource("4_47c5h")]
 position = Vector2(384, -96)
 
-[node name="Pantalla 5" parent="." unique_id=805901518 instance=ExtResource("5_sgff0")]
+[node name="PantallaS1" parent="." unique_id=805901518 instance=ExtResource("5_sgff0")]
+
+[node name="Pantalla5" parent="." unique_id=1963058411 instance=ExtResource("6_v10u1")]
+position = Vector2(-400, 384)
+
+[node name="Pantalla6" parent="." unique_id=563658247 instance=ExtResource("7_47c5h")]
+position = Vector2(94, 510)
+
+[node name="Pantalla7" parent="." unique_id=2132617608 instance=ExtResource("8_sgff0")]
+position = Vector2(-401, 686)
+
+[node name="Pantalla8" parent="." unique_id=700352425 instance=ExtResource("9_84bil")]
+position = Vector2(590, 510)
+
+[node name="Pantalla9" parent="." unique_id=1045537786 instance=ExtResource("9_sgff0")]
+position = Vector2(590, 208)
