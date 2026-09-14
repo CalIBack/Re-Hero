@@ -28,7 +28,7 @@ position = Vector2(384, -96)
 [node name="PantallaS1" parent="." unique_id=805901518 instance=ExtResource("5_sgff0")]
 
 [node name="Pantalla5" parent="." unique_id=1963058411 instance=ExtResource("6_v10u1")]
-position = Vector2(-400, 384)
+position = Vector2(-401, 384)
 
 [node name="Pantalla6" parent="." unique_id=563658247 instance=ExtResource("7_47c5h")]
 position = Vector2(94, 510)
