@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cr6cugkv1c6r"]
+
+[ext_resource type="Texture2D" uid="uid://bfe0f3su77fw" path="res://Sprites/ParedRompible.png" id="1_c8r01"]
+[ext_resource type="Script" uid="uid://d1il6psc8h318" path="res://Escenas/Plataformero/Interactivos/ParedRompible/pared_rompible.gd" id="1_unckn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj32t"]
+size = Vector2(16, 16)
+
+[node name="ParedRompible" type="RigidBody2D" unique_id=316754497 node_paths=PackedStringArray("sprite", "area_deteccion")]
+script = ExtResource("1_unckn")
+sprite = NodePath("Sprite2D")
+area_deteccion = NodePath("Area2D")
+es_empujable = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1343997976]
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1891691247]
+shape = SubResource("RectangleShape2D_orvxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1026610739]
+texture = ExtResource("1_c8r01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1459380946]
+shape = SubResource("RectangleShape2D_lj32t")

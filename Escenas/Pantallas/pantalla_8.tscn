@@ -8,25 +8,25 @@
 [ext_resource type="PackedScene" uid="uid://d0fhic2t36g6v" path="res://Escenas/Plataformero/entrada.tscn" id="6_8vsan"]
 [ext_resource type="PackedScene" path="res://Escenas/Plataformero/Enemigos/enemigo.tscn" id="7_mkfe7"]
 
-[node name="Pantalla1" type="Node2D" unique_id=458890401]
+[node name="Pantalla8" type="Node2D" unique_id=458890401]
 
 [node name="Fondo" type="TileMapLayer" parent="." unique_id=934251946]
-tile_map_data = PackedByteArray("AADx/wgAAAAJABEAAADy/wgAAAAKABEAAADz/wgAAAAJABEAAAD0/wgAAAAKABEAAAD1/wgAAAALABEAAAD2/wgAAAAJABEAAAD3/wgAAAAKABEAAAD4/wgAAAALABEAAAD5/wgAAAAKABEAAAD6/wgAAAALABEAAAD7/wgAAAAKABEAAAD8/wgAAAALABEAAAD9/wgAAAALABEAAAD+/wgAAAAKABEAAAD//wgAAAALABEAAAAAAAgAAAAKABEAAAABAAgAAAALABEAAAACAAgAAAAKABEAAAADAAgAAAALABEAAAAEAAgAAAAKABEAAAAFAAgAAAALABEAAAAGAAgAAAAKABEAAAAHAAgAAAALABEAAAAIAAgAAAAKABEAAAAJAAgAAAALABEAAAAKAAgAAAAKABEAAAALAAgAAAAJABEAAAAMAAgAAAAKABEAAAANAAgAAAALABEAAAAOAAgAAAAKABEAAAAPAAgAAAALABEAAAD+/wQAAAAJABEAAAD//wQAAAAKABEAAAAAAAQAAAALABEAAAAGAAQAAAAJABEAAAAHAAQAAAAKABEAAAAIAAQAAAALABEAAAADAAQAAAAJABEAAAAEAAQAAAAKABEAAAAFAAQAAAALABEAAAALAAQAAAAJABEAAAAMAAQAAAAKABEAAAANAAQAAAALABEAAAD1////AAANAAEAACD0//3/AAAMAAMAACDz//r/AAALAAYAACDy//n/AAAKAAcAACD///n/AAAKAAcAAED+//r/AAALAAYAAED7//v/AAAMAAMAAED5//z/AAANAAEAAEAGAAAAAAAKAAcAAGAFAP//AAALAAYAAGACAP7/AAAMAAMAAGAAAP3/AAANAAEAAGD+/wIAAAANAAEAAHD8/wMAAAAMAAMAAHD5/wQAAAALAAYAAHD4/wUAAAAKAAcAAHAKAPj/AAANAAEAAHAIAPn/AAAMAAMAAHAFAPr/AAALAAYAAHAEAPv/AAAKAAcAAHDy/wEAAAAIAAYAAADy/wIAAAAIAAcAAADz/wEAAAAJAAYAAADz/wIAAAAJAAcAAAD5//j/AAAIAAYAAAD5//n/AAAIAAcAAAD6//j/AAAJAAYAAAD6//n/AAAJAAcAAADx//f/AAAKAAEAAADx//j/AAAKAAIAAADy//f/AAALAAEAAADy//j/AAALAAIAAAAMAAIAAAAKAAMAAAAMAAMAAAAKAAQAAAANAAIAAAALAAMAAAANAAMAAAALAAQAAAD8//f/AAAJABAAAAAFAPf/AAAJAA4AAAAFAPj/AAAJAA8AAAD3//f/AAAJAA4AAAD3//j/AAAJAA8AAAD8//z/AAAJAA4AAAD8//3/AAAJAA8AAAABAPf/AAAGAA4AAAABAPj/AAAGAA8AAAACAPf/AAAHAA4AAAACAPj/AAAHAA8AAAANAPf/AAAGABEAAAAOAPf/AAAHABEAAAA=")
+tile_map_data = PackedByteArray("AADx/wgABAAJABEAAADy/wgABAAKABEAAADz/wgABAALABEAAAD0/wgABAAJABEAAAD1/wgABAAKABEAAAD2/wgABAALABEAAAD3/wgABAAJABEAAAD4/wgABAAKABEAAAD5/wgABAALABEAAAD6/wgABAAJABEAAAD7/wgABAAKABEAAAD8/wgABAALABEAAAD9/wgABAAJABEAAAD+/wgABAAKABEAAAD//wgABAALABEAAAAAAAgABAAJABEAAAABAAgABAAKABEAAAACAAgABAALABEAAAADAAgABAAJABEAAAAEAAgABAAKABEAAAAFAAgABAALABEAAAAGAAgABAAJABEAAAAHAAgABAAKABEAAAAIAAgABAALABEAAAAJAAgABAAJABEAAAAKAAgABAAKABEAAAALAAgABAALABEAAAAMAAgABAAJABEAAAANAAgABAAKABEAAAAOAAgABAAJABEAAAAPAAgABAAKABEAAAD+/wQABAAJABEAAAD//wQABAAKABEAAAAAAAQABAALABEAAAAGAAQABAAJABEAAAAHAAQABAAKABEAAAAIAAQABAALABEAAAADAAQABAAJABEAAAAEAAQABAAKABEAAAAFAAQABAALABEAAAALAAQABAAJABEAAAAMAAQABAAKABEAAAANAAQABAALABEAAAD1////BAALAAUAAADz//r/BAALAAUAABDy//n/BAAMAAQAABD+//r/BAANAAIAAAAFAP//BAALAAUAABD+/wIABAAKAAcAAAD8/wMABAAMAAYAAAD5/wQABAALAAYAAAD4/wUABAAKAAcAAAAFAPr/BAALAAcAABD5//j/BAAKAAMAAAD5//n/BAAKAAQAAAD6//j/BAALAAMAAAD6//n/BAALAAQAAADx//f/BAAHABEAABDy//f/BAAGABEAABAMAAIABAAKAAEAAAAMAAMABAAKAAIAAAANAAIABAALAAEAAAANAAMABAALAAIAAAAFAPj/BAALAAUAABANAPf/BAAGABEAAAD0/wEABAAKAAcAAAD1/wEABAALAAcAAAD2//7/BAAMAAQAAAD6//z/BAAKAAcAAAD7//r/BAALAAUAAAD7//z/BAALAAcAAAD8//n/BAAMAAQAAAAEAPf/BAAMAAQAABAGAPr/BAAKAAcAABAEAP7/BAAMAAQAABAGAAEABAAKAAcAABAFAAEABAALAAcAABD9//v/BAAMAAMAAAD+//n/BAANAAEAAAD+//3/BAANAAUAAAD+//7/BAANAAYAAAAJAP7/BAAMAAMAAAAKAPz/BAANAAEAAAAKAP3/BAANAAIAAAAKAAAABAANAAUAAAAKAAEABAANAAYAAAAMAPn/BAAMAAMAAAANAPj/BAANAAIAAAANAPv/BAANAAUAAAANAPz/BAANAAYAAAD6/wQABAAMAAYAAAD7/wMABAALAAYAAAD9/wQABAANAAcAAAD7/wUABAANAAcAAAD//wEABAALAAYAAAAAAAEABAAMAAYAAAABAAIABAANAAcAAAAAAP3/BAAKAAcAAAABAPz/BAALAAYAAAACAPz/BAAMAAYAAAADAP3/BAANAAcAAAD8//f/BAAGABEAAAD9//f/BAAHABEAAAD///f/BAAGABEAABD+//f/BAAHABEAABAOAPf/BAAHABEAAAD4//f/BAAJAA4AAAD4//j/BAAJAA8AAAD4//n/BAAJAA8AAAD4//r/BAAJAA8AAAD4//v/BAAJAA8AAAD4//z/BAAJAA8AAAD4//3/BAAJAA8AAAACAPf/BAAJAA4AAAACAPj/BAAJAA8AAAAIAPf/BAAJAA4AAAAIAPj/BAAJAA8AAAD1//f/BAAJABAAAAA=")
 tile_set = ExtResource("1_5g4sa")
 
 [node name="Fondo2" type="TileMapLayer" parent="." unique_id=1681250765]
-tile_map_data = PackedByteArray("AADx/wgAAAAKABEAAADy/wgAAAAJABEAAADz/wgAAAAKABEAAAD0/wgAAAALABEAAAD1/wgAAAAJABEAAAD2/wgAAAAKABEAAAD3/wgAAAALABEAAAD4/wgAAAAJABEAAAD5/wgAAAAJABEAAAD6/wgAAAAKABEAAAD7/wgAAAAJABEAAAD8/wgAAAAKABEAAAD9/wgAAAAJABEAAAD+/wgAAAAJABEAAAD//wgAAAAKABEAAAAAAAgAAAAJABEAAAABAAgAAAAJABEAAAACAAgAAAAJABEAAAADAAgAAAAJABEAAAAEAAgAAAAKABEAAAAFAAgAAAAJABEAAAAGAAgAAAAJABEAAAAHAAgAAAAJABEAAAAIAAgAAAAJABEAAAAJAAgAAAAKABEAAAAKAAgAAAAJABEAAAALAAgAAAAKABEAAAAMAAgAAAALABEAAAANAAgAAAAKABEAAAAOAAgAAAAJABEAAAAPAAgAAAAKABEAAADw/wgAAAAJABEAAAA=")
+tile_map_data = PackedByteArray("AADx/wgABAAKABEAAADy/wgABAALABEAAADz/wgABAAKABEAAAD0/wgABAALABEAAAD1/wgABAAJABEAAAD2/wgABAAKABEAAAD3/wgABAALABEAAAD4/wgABAALABEAAAD5/wgABAAJABEAAAD6/wgABAAKABEAAAD7/wgABAALABEAAAD8/wgABAAJABEAAAD9/wgABAAKABEAAAD+/wgABAALABEAAAD//wgABAAJABEAAAAAAAgABAAKABEAAAABAAgABAALABEAAAACAAgABAAKABEAAAADAAgABAALABEAAAAEAAgABAAJABEAAAAFAAgABAAKABEAAAAGAAgABAALABEAAAAHAAgABAAJABEAAAAIAAgABAAKABEAAAAJAAgABAALABEAAAAKAAgABAAJABEAAAALAAgABAAKABEAAAAMAAgABAALABEAAAANAAgABAAJABEAAAAOAAgABAAKABEAAAAPAAgABAALABEAAAA=")
 tile_set = ExtResource("1_5g4sa")
 
 [node name="Bordes" parent="." unique_id=1702401186 instance=ExtResource("2_d7ogb")]
-tile_map_data = PackedByteArray("AADw/wAABAADAAIAAAAPAAAABAABAAIAAAD//wkABAACAAEAAAD///b/BAACAAMAAADx//b/BAACAAMAAADy//b/BAACAAMAAADz//b/BAACAAMAAAD0//b/BAACAAMAAAD1//b/BAACAAMAAAD2//b/BAACAAMAAAD3//b/BAACAAMAAAD4//b/BAACAAMAAAD5//b/BAACAAMAAAD6//b/BAACAAMAAAD7//b/BAACAAMAAAD8//b/BAACAAMAAAD9//b/BAACAAMAAAD+//b/BAACAAMAAAAAAPb/BAACAAMAAAABAPb/BAACAAMAAAACAPb/BAACAAMAAAADAPb/BAACAAMAAAAEAPb/BAACAAMAAAAFAPb/BAACAAMAAAAGAPb/BAACAAMAAAAHAPb/BAACAAMAAAAIAPb/BAACAAMAAAAMAPb/BAACAAMAAAANAPb/BAACAAMAAAAOAPb/BAACAAMAAADw//b/BAAFAAIAADAPAAkABAAFAAIAAADw/wkABAAGAAIAAAAPAPb/BAAFAAIAACAPAPf/BAABAAIAAAAPAPj/BAABAAIAAAAPAPn/BAABAAIAAAAPAPr/BAABAAIAAAAPAPv/BAABAAIAAAAPAPz/BAABAAIAAAAPAP3/BAABAAIAAAAPAP7/BAABAAIAAAAPAP//BAABAAIAAAAPAAEABAABAAIAAAAPAAIABAABAAIAAAAPAAMABAABAAIAAAAPAAQABAABAAIAAAAPAAUABAABAAIAAAAOAAkABAACAAEAAAANAAkABAACAAEAAAAMAAkABAACAAEAAAALAAkABAACAAEAAAAKAAkABAACAAEAAAAJAAkABAACAAEAAAAIAAkABAACAAEAAAAHAAkABAACAAEAAAAGAAkABAACAAEAAAAFAAkABAACAAEAAAAEAAkABAACAAEAAAADAAkABAACAAEAAAACAAkABAACAAEAAAABAAkABAACAAEAAAAAAAkABAACAAEAAAD+/wkABAACAAEAAAD9/wkABAACAAEAAAD8/wkABAACAAEAAAD7/wkABAACAAEAAAD6/wkABAACAAEAAAD5/wkABAACAAEAAAD4/wkABAACAAEAAAD3/wkABAACAAEAAAD2/wkABAACAAEAAAD1/wkABAACAAEAAAD0/wkABAACAAEAAADz/wkABAACAAEAAADy/wkABAACAAEAAADx/wkABAACAAEAAADw/wgABAADAAIAAADw/wcABAADAAIAAADw/wYABAADAAIAAADw/wUABAADAAIAAADw/wQABAADAAIAAADw/wMABAADAAIAAADw/wIABAADAAIAAADw/wEABAADAAIAAADw////BAADAAIAAADw//7/BAADAAIAAADw//3/BAACAAEAAADw//n/BAADAAIAAADw//j/BAADAAIAAADw//f/BAADAAIAAADx//3/BAADAAEAAAAOAAMAAAAJAAsAAAAOAAQAAAAJAAwAAAAOAAEAAAAJAAsAAAAOAAIAAAAJAAwAAAAOAP//AAAJAAsAAAAOAAAAAAAJAAwAAAAOAP3/AAAJAAsAAAAOAP7/AAAJAAwAAAAOAPv/AAAJAAsAAAAOAPz/AAAJAAwAAAAOAPn/AAAJAAsAAAAOAPr/AAAJAAwAAAAOAPf/AAAJAAsAAAAOAPj/AAAJAAwAAAA=")
+tile_map_data = PackedByteArray("AADw/wAABAADAAIAAAAPAAAABAABAAIAAAD//wkABAACAAEAAAD///b/BAACAAMAAADx//b/BAACAAMAAADy//b/BAACAAMAAADz//b/BAACAAMAAAD0//b/BAACAAMAAAD1//b/BAACAAMAAAD2//b/BAACAAMAAAD3//b/BAACAAMAAAD4//b/BAACAAMAAAD5//b/BAACAAMAAAD6//b/BAACAAMAAAD7//b/BAACAAMAAAD8//b/BAACAAMAAAD9//b/BAACAAMAAAD+//b/BAACAAMAAAAAAPb/BAACAAMAAAABAPb/BAACAAMAAAACAPb/BAACAAMAAAADAPb/BAACAAMAAAAEAPb/BAACAAMAAAAFAPb/BAACAAMAAAAGAPb/BAACAAMAAAAHAPb/BAACAAMAAAAIAPb/BAACAAMAAAAMAPb/BAACAAMAAAANAPb/BAACAAMAAAAOAPb/BAACAAMAAADw//b/BAAFAAIAADAPAAkABAAFAAIAAADw/wkABAAGAAIAAAAPAPb/BAAFAAIAACAPAPf/BAABAAIAAAAPAPj/BAABAAIAAAAPAPn/BAABAAIAAAAPAPr/BAABAAIAAAAPAPv/BAABAAIAAAAPAPz/BAABAAIAAAAPAP3/BAABAAIAAAAPAP7/BAABAAIAAAAPAP//BAABAAIAAAAPAAEABAABAAIAAAAPAAIABAABAAIAAAAPAAMABAABAAIAAAAPAAQABAABAAIAAAAPAAUABAABAAIAAAAOAAkABAACAAEAAAANAAkABAACAAEAAAAMAAkABAACAAEAAAALAAkABAACAAEAAAAKAAkABAACAAEAAAAJAAkABAACAAEAAAAIAAkABAACAAEAAAAHAAkABAACAAEAAAAGAAkABAACAAEAAAAFAAkABAACAAEAAAAEAAkABAACAAEAAAADAAkABAACAAEAAAACAAkABAACAAEAAAABAAkABAACAAEAAAAAAAkABAACAAEAAAD+/wkABAACAAEAAAD9/wkABAACAAEAAAD8/wkABAACAAEAAAD7/wkABAACAAEAAAD6/wkABAACAAEAAAD5/wkABAACAAEAAAD4/wkABAACAAEAAAD3/wkABAACAAEAAAD2/wkABAACAAEAAAD1/wkABAACAAEAAAD0/wkABAACAAEAAADz/wkABAACAAEAAADy/wkABAACAAEAAADx/wkABAACAAEAAADw/wgABAADAAIAAADw/wcABAADAAIAAADw/wYABAADAAIAAADw/wUABAADAAIAAADw/wQABAADAAIAAADw/wMABAADAAIAAADw/wIABAADAAIAAADw/wEABAADAAIAAADw////BAADAAIAAADw//7/BAADAAIAAADw//3/BAACAAEAAADw//n/BAADAAIAAADw//j/BAADAAIAAADw//f/BAADAAIAAADx//3/BAADAAEAAAAOAAMABAAEAAsAAAAOAAQABAAEAAwAAAAOAAEABAAEAAsAAAAOAAIABAAEAAwAAAAOAP//BAAEAAsAAAAOAAAABAAEAAwAAAAOAP3/BAAEAAwAAAAOAP7/BAAEAAwAAAAOAPv/BAAEAAwAAAAOAPz/BAAEAAsAAAAOAPn/BAAEAAwAAAAOAPr/BAAEAAsAAAAOAPf/BAAEAAsAAAAOAPj/BAAEAAwAAAA=")
 
 [node name="Solidos" type="TileMapLayer" parent="." unique_id=792180893]
-tile_map_data = PackedByteArray("AAAOAAUAAAACAAEAAAANAAUAAAACAAEAAAAMAAUAAAACAAEAAAALAAUAAAACAAEAAAAKAAUAAAACAAEAAAAJAAUAAAACAAEAAAAIAAUAAAACAAEAAAAHAAUAAAACAAEAAAAGAAUAAAACAAEAAAAFAAUAAAACAAEAAAAEAAUAAAACAAEAAAADAAUAAAACAAEAAAACAAUAAAACAAEAAAABAAUAAAACAAEAAAAAAAUAAAACAAEAAAD//wUAAAACAAEAAAD+/wUAAAACAAEAAAD+/wYAAAAGAAMAAAADAAYAAAAGAAMAAAAIAAYAAAAGAAMAAAANAAYAAAAGAAMAAAD+/wQAAAAHAAwAAAD//wQAAAAHAAwAAAAAAAQAAAAIAAwAAAABAAQAAAAIAAwAAAACAAQAAAAHAAwAAAADAAQAAAAIAAwAAAAEAAQAAAAHAAwAAAAFAAQAAAAHAAwAAAAGAAQAAAAIAAwAAAAHAAQAAAAIAAwAAAAIAAQAAAAHAAwAAAAJAAQAAAAIAAwAAAAKAAQAAAAHAAwAAAALAAQAAAAIAAwAAAAMAAQAAAAHAAwAAAANAAQAAAAHAAwAAAAOAAQAAAAIAAwAAAD0/wYAAAACAAEAAAD3/wQAAAACAAEAAAD6/wIAAAACAAEAAAD9////AAACAAEAAAADAAEAAAACAAEAAAAIAP//AAACAAEAAAD8//v/AAACAAEAAAALAPn/AAACAAEAAAALAP3/AAACAAEAAAAHAPv/AAACAAEAAAACAPv/AAACAAEAAAD3//v/AAACAAEAAAAKAAIAAAACAAEAAAA=")
+tile_map_data = PackedByteArray("AAAOAAUABAACAAEAAAANAAUABAACAAEAAAAMAAUABAACAAEAAAALAAUABAACAAEAAAAKAAUABAACAAEAAAAJAAUABAACAAEAAAAIAAUABAACAAEAAAAGAAUABAACAAEAAAAFAAUABAACAAEAAAAEAAUABAACAAEAAAADAAUABAACAAEAAAACAAUABAACAAEAAAABAAUABAACAAEAAAAAAAUABAACAAEAAAD//wUABAACAAEAAAD+/wUABAACAAEAAAADAAYABAACAAMAAAAIAAYABAACAAMAAAANAAYABAACAAMAAAD+/wQABAADAAwAAAD//wQABAACAAwAAAAAAAQABAADAAwAAAABAAQABAACAAwAAAACAAQABAADAAwAAAADAAQABAACAAwAAAAEAAQABAADAAwAAAAFAAQABAACAAwAAAAGAAQABAADAAwAAAAHAAQABAACAAwAAAAIAAQABAADAAwAAAAJAAQABAACAAwAAAAKAAQABAADAAwAAAALAAQABAACAAwAAAAMAAQABAADAAwAAAANAAQABAACAAwAAAAOAAQABAADAAwAAAD0/wYABAACAAEAAAD3/wQABAACAAEAAAACAAYABAAFAAMAAAAEAAYABAAGAAMAAAAHAAYABAAFAAMAAAAJAAYABAAGAAMAAAAOAAYABAAGAAMAAAAMAAYABAAFAAMAAAAHAAUABAACAAEAAAD+/wYABAACAAMAAAD//wYABAAGAAMAAAD9/wUABAABAAEAAAD9/wYABAAFAAMAAAD9/wQABAACAAwAAAD7/wIABAACAAEAAAD//wEABAACAAEAAAADAAAABAACAAEAAAAKAP//BAABAAEAAAAHAAAABAACAAEAAADz//3/BAADAAEAAADy//3/BAACAAEAAADx//3/BAACAAEAAAAKAPr/BAACAAEAAAAMAP3/BAACAAEAAAALAAEABAACAAEAAAAMAAEABAACAAEAAAAKAAAABAABAAEAAAAKAAEABAABAAIAAAANAAEABAADAAEAAAAIAPr/BAACAAEAAAAJAPr/BAACAAEAAAAHAPr/BAACAAEAAAA=")
 tile_set = ExtResource("1_5g4sa")
 
 [node name="Interactivos" type="TileMapLayer" parent="." unique_id=2064489702]
-tile_map_data = PackedByteArray("AAADAAgAAQAAAAAADQAIAAgAAQAAAAAADQANAAgAAQAAAAAADQAMAP//AQAAAAAADwD0//j/AQAAAAAADwD+/wgAAQAAAAAADQA=")
+tile_map_data = PackedByteArray("AAADAAgAAQAAAAAADQAIAAgAAQAAAAAADQANAAgAAQAAAAAADQD+/wgAAQAAAAAADQAMAP//AQAAAAAADwAIAPj/AQAAAAAADwA=")
 tile_set = ExtResource("1_5g4sa")
 
 [node name="Trampas" type="Node2D" parent="." unique_id=1962102710]
@@ -49,161 +49,104 @@ position = Vector2(-248, 56)
 position = Vector2(-136, 56)
 trampas_a_activar = [NodePath("../Trampa")]
 
-[node name="Trampa3" type="Node2D" parent="Trampas" unique_id=23168789]
+[node name="Trampa3" type="Node2D" parent="Trampas" unique_id=1638149659]
 
-[node name="Trampa" parent="Trampas/Trampa3" unique_id=1706181117 instance=ExtResource("3_kppom")]
+[node name="Trampa" parent="Trampas/Trampa3" unique_id=1782809430 instance=ExtResource("3_kppom")]
 position = Vector2(-248, 24)
 
-[node name="Trampa2" parent="Trampas/Trampa3" unique_id=348111629 instance=ExtResource("3_kppom")]
-position = Vector2(56, 24)
-dispara_izquierda = true
+[node name="Placa" parent="Trampas/Trampa3" unique_id=562399462 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
+position = Vector2(-72, 24)
+trampas_a_activar = [NodePath("../Trampa")]
 
-[node name="Placa" parent="Trampas/Trampa3" unique_id=1125926514 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(-88, 24)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("../Trampa2")]
+[node name="Trampa4" type="Node2D" parent="Trampas" unique_id=1382092997]
 
-[node name="Trampa4" type="Node2D" parent="Trampas" unique_id=1273833015]
-
-[node name="Trampa" parent="Trampas/Trampa4" unique_id=229026220 instance=ExtResource("3_kppom")]
-position = Vector2(-232, -40)
-
-[node name="Trampa2" parent="Trampas/Trampa4" unique_id=380976910 instance=ExtResource("3_kppom")]
-position = Vector2(184, -40)
-dispara_izquierda = true
-
-[node name="Placa" parent="Trampas/Trampa4" unique_id=447156024 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(-40, -24)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("../Trampa2")]
-
-[node name="Trampa5" type="Node2D" parent="Trampas" unique_id=23074310]
-
-[node name="Trampa" parent="Trampas/Trampa5" unique_id=1669417862 instance=ExtResource("3_kppom")]
-position = Vector2(-40, -8)
-
-[node name="Trampa2" parent="Trampas/Trampa5" unique_id=230911485 instance=ExtResource("3_kppom")]
-position = Vector2(136, -8)
-dispara_izquierda = true
-
-[node name="Placa" parent="Trampas/Trampa5" unique_id=234317449 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
+[node name="Trampa" parent="Trampas/Trampa4" unique_id=812711416 instance=ExtResource("3_kppom")]
 position = Vector2(56, 8)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("../Trampa2")]
-
-[node name="Trampa6" type="Node2D" parent="Trampas" unique_id=413858902]
-
-[node name="Trampa" parent="Trampas/Trampa6" unique_id=2093079196 instance=ExtResource("3_kppom")]
-position = Vector2(120, -72)
-
-[node name="Trampa2" parent="Trampas/Trampa6" unique_id=373586300 instance=ExtResource("3_kppom")]
-position = Vector2(184, -40)
 dispara_izquierda = true
 
-[node name="Placa" parent="Trampas/Trampa6" unique_id=1702827490 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(136, -24)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("../Trampa2")]
+[node name="Placa" parent="Trampas/Trampa4" unique_id=1750746433 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
+position = Vector2(-8, 8)
+trampas_a_activar = [NodePath("../Trampa")]
 
-[node name="Trampa7" type="Node2D" parent="Trampas" unique_id=1906467080]
+[node name="Trampa5" type="Node2D" parent="Trampas" unique_id=1614863882]
 
-[node name="Trampa" parent="Trampas/Trampa7" unique_id=1577088511 instance=ExtResource("3_kppom")]
-position = Vector2(120, -72)
-
-[node name="Placa" parent="Trampas/Trampa7" unique_id=541204385 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(184, -56)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("")]
-
-[node name="Trampa8" type="Node2D" parent="Trampas" unique_id=338989556]
-
-[node name="Trampa" parent="Trampas/Trampa8" unique_id=1034730177 instance=ExtResource("3_kppom")]
-position = Vector2(184, -104)
+[node name="Trampa" parent="Trampas/Trampa5" unique_id=63112627 instance=ExtResource("3_kppom")]
+position = Vector2(168, -8)
 dispara_izquierda = true
 
-[node name="Trampa2" parent="Trampas/Trampa8" unique_id=1098274080 instance=ExtResource("3_kppom")]
-position = Vector2(-248, -136)
+[node name="Placa" parent="Trampas/Trampa5" unique_id=1084281553 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
+position = Vector2(56, -8)
+trampas_a_activar = [NodePath("../Trampa")]
 
-[node name="Placa" parent="Trampas/Trampa8" unique_id=322914381 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(120, -88)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("../Trampa2")]
+[node name="Trampa6" type="Node2D" parent="Trampas" unique_id=920810606]
 
-[node name="Trampa9" type="Node2D" parent="Trampas" unique_id=1106343048]
+[node name="Trampa" parent="Trampas/Trampa6" unique_id=447706770 instance=ExtResource("3_kppom")]
+position = Vector2(-248, -8)
 
-[node name="Trampa" parent="Trampas/Trampa9" unique_id=99980719 instance=ExtResource("3_kppom")]
-position = Vector2(136, -151)
+[node name="Placa" parent="Trampas/Trampa6" unique_id=382850892 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
+position = Vector2(120, -8)
+trampas_a_activar = [NodePath("../Trampa")]
 
-[node name="Placa" parent="Trampas/Trampa9" unique_id=1765721792 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(184, -120)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("")]
+[node name="Trampa7" type="Node2D" parent="Trampas" unique_id=1138228339]
 
-[node name="Trampa10" type="Node2D" parent="Trampas" unique_id=1177034822]
+[node name="Trampa" parent="Trampas/Trampa7" unique_id=417688292 instance=ExtResource("3_kppom")]
+position = Vector2(-248, -24)
 
-[node name="Trampa" parent="Trampas/Trampa10" unique_id=356543893 instance=ExtResource("3_kppom")]
-position = Vector2(-248, -104)
+[node name="Placa" parent="Trampas/Trampa7" unique_id=1745027966 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
+position = Vector2(168, -24)
+trampas_a_activar = [NodePath("../Trampa")]
 
-[node name="Trampa2" parent="Trampas/Trampa10" unique_id=855534206 instance=ExtResource("3_kppom")]
-position = Vector2(184, -104)
+[node name="Trampa8" type="Node2D" parent="Trampas" unique_id=1378828824]
+
+[node name="Trampa" parent="Trampas/Trampa8" unique_id=698852450 instance=ExtResource("3_kppom")]
+position = Vector2(248, -56)
 dispara_izquierda = true
 
-[node name="Placa" parent="Trampas/Trampa10" unique_id=307159382 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(40, -88)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("../Trampa2")]
+[node name="Placa" parent="Trampas/Trampa8" unique_id=1131171613 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
+position = Vector2(200, -56)
+trampas_a_activar = [NodePath("../Trampa")]
 
-[node name="Trampa11" type="Node2D" parent="Trampas" unique_id=888568186]
+[node name="Trampa9" type="Node2D" parent="Trampas" unique_id=1594904719]
 
-[node name="Trampa" parent="Trampas/Trampa11" unique_id=334813206 instance=ExtResource("3_kppom")]
-position = Vector2(-248, -104)
-
-[node name="Trampa2" parent="Trampas/Trampa11" unique_id=534670375 instance=ExtResource("3_kppom")]
-position = Vector2(184, -104)
+[node name="Trampa" parent="Trampas/Trampa9" unique_id=1126949844 instance=ExtResource("3_kppom")]
+position = Vector2(248, -104)
 dispara_izquierda = true
 
-[node name="Placa" parent="Trampas/Trampa11" unique_id=1816536827 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(-56, -88)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("../Trampa2")]
-
-[node name="Trampa12" type="Node2D" parent="Trampas" unique_id=1472028688]
-
-[node name="Trampa" parent="Trampas/Trampa12" unique_id=1916728965 instance=ExtResource("3_kppom")]
-position = Vector2(-248, -120)
-
-[node name="Trampa2" parent="Trampas/Trampa12" unique_id=1450716312 instance=ExtResource("3_kppom")]
-position = Vector2(184, -104)
-dispara_izquierda = true
-
-[node name="Placa" parent="Trampas/Trampa12" unique_id=987456891 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(-136, -88)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("../Trampa2")]
-
-[node name="Trampa13" type="Node2D" parent="Trampas" unique_id=1540572904]
-
-[node name="Trampa" parent="Trampas/Trampa13" unique_id=1986239383 instance=ExtResource("3_kppom")]
-position = Vector2(56, 24)
-
-[node name="Placa" parent="Trampas/Trampa13" unique_id=2002744946 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
-position = Vector2(168, 24)
-trampas_a_activar = [NodePath("../Trampa"), NodePath("")]
+[node name="Placa" parent="Trampas/Trampa9" unique_id=1321534635 node_paths=PackedStringArray("trampas_a_activar") instance=ExtResource("4_cg1mo")]
+position = Vector2(168, -104)
+trampas_a_activar = [NodePath("../Trampa")]
 
 [node name="Salidas" type="Node2D" parent="." unique_id=1802744143]
-visible = false
 
 [node name="Salida1" parent="Salidas" unique_id=62743793 instance=ExtResource("5_y3xdf")]
-position = Vector2(-252, -8)
-nombre_pantalla_destino = "Pantalla2"
+position = Vector2(-252, -72)
+nombre_pantalla_destino = "Pantalla7"
 
 [node name="Salida2" parent="Salidas" unique_id=1602203035 instance=ExtResource("5_y3xdf")]
 position = Vector2(168, -160)
 rotation = 1.5707964
-nombre_pantalla_destino = "Pantalla4"
+nombre_pantalla_destino = "Pantalla9"
 
-[node name="Spawn" parent="." unique_id=1156173601 instance=ExtResource("6_8vsan")]
-visible = false
-position = Vector2(-200, 128)
-mira_a_la_derecha = false
-es_spawn_base = true
+[node name="Salida3" parent="Salidas" unique_id=300737864 instance=ExtResource("5_y3xdf")]
+position = Vector2(252, 120)
+nombre_pantalla_destino = "Pantalla7"
 
 [node name="Camara" parent="." unique_id=725594946 instance=ExtResource("6_8vsan")]
 visible = false
 mira_a_la_derecha = false
 es_spawn_base = true
 
-[node name="Enemigo" parent="." unique_id=247240884 instance=ExtResource("7_mkfe7")]
-visible = false
-position = Vector2(228, 4)
+[node name="Enemigos" type="Node2D" parent="." unique_id=1526207117]
+position = Vector2(16, 128)
 scale = Vector2(1.1, 1.1)
+
+[node name="Enemigo" parent="Enemigos" unique_id=247240884 instance=ExtResource("7_mkfe7")]
+
+[node name="Enemigo2" parent="Enemigos" unique_id=93956370 instance=ExtResource("7_mkfe7")]
+position = Vector2(72.727264, 0)
+
+[node name="Enemigo3" parent="Enemigos" unique_id=1104204904 instance=ExtResource("7_mkfe7")]
+position = Vector2(145.45454, 0)
+
+[node name="Enemigo4" parent="Enemigos" unique_id=1318773165 instance=ExtResource("7_mkfe7")]
+position = Vector2(210.90909, 0)

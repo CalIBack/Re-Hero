@@ -4,40 +4,52 @@
 [ext_resource type="PackedScene" uid="uid://eay6kqcyyf25" path="res://Escenas/Pantallas/pantalla_2.tscn" id="2_v10u1"]
 [ext_resource type="PackedScene" uid="uid://qhrx7aqob6ey" path="res://Escenas/Pantallas/pantalla_3.tscn" id="3_ofv6v"]
 [ext_resource type="PackedScene" uid="uid://b6wjodqa71ngf" path="res://Escenas/Pantallas/pantalla_4.tscn" id="4_47c5h"]
-[ext_resource type="PackedScene" uid="uid://bvqsq2j4tm1th" path="res://Escenas/Pantallas/pantalla_s1.tscn" id="5_sgff0"]
+[ext_resource type="PackedScene" uid="uid://bvqsq2j4tm1th" path="res://Escenas/Pantallas/pantalla_S3.tscn" id="5_sgff0"]
 [ext_resource type="PackedScene" uid="uid://rkln1o4iusgi" path="res://Escenas/Pantallas/pantalla_5.tscn" id="6_v10u1"]
-[ext_resource type="PackedScene" uid="uid://dg6rjchv3odch" path="res://Escenas/Pantallas/pantalla_6.tscn" id="7_47c5h"]
-[ext_resource type="PackedScene" uid="uid://c36ks6eefkucc" path="res://Escenas/Pantallas/pantalla_7.tscn" id="8_sgff0"]
+[ext_resource type="PackedScene" uid="uid://dg6rjchv3odch" path="res://Escenas/Pantallas/pantalla_7.tscn" id="7_47c5h"]
+[ext_resource type="PackedScene" uid="uid://c36ks6eefkucc" path="res://Escenas/Pantallas/pantalla_6.tscn" id="8_sgff0"]
 [ext_resource type="PackedScene" uid="uid://dqht53bp6377m" path="res://Escenas/Pantallas/pantalla_8.tscn" id="9_84bil"]
 [ext_resource type="PackedScene" uid="uid://2ijni7nguf37" path="res://Escenas/Pantallas/pantalla_9.tscn" id="9_sgff0"]
+[ext_resource type="PackedScene" uid="uid://bail8oyi0bgap" path="res://Escenas/Pantallas/pantalla_S2.tscn" id="9_xheqx"]
+[ext_resource type="PackedScene" uid="uid://bnnneg2rrl81o" path="res://Escenas/Pantallas/pantalla_S4.tscn" id="10_jep1t"]
+[ext_resource type="PackedScene" uid="uid://5ops7k6428fn" path="res://Escenas/Pantallas/pantalla_S1.tscn" id="13_u7715"]
 
-[node name="Node2D" type="Node2D" unique_id=1927998601]
+[node name="Region" type="Node2D" unique_id=1927998601]
 
 [node name="Pantalla1" parent="." unique_id=458890401 instance=ExtResource("1_gl2xl")]
-position = Vector2(96, 208)
+
+[node name="PantallaS1" parent="." unique_id=760565073 instance=ExtResource("13_u7715")]
+position = Vector2(320, 80)
 
 [node name="Pantalla2" parent="." unique_id=981770813 instance=ExtResource("2_v10u1")]
-position = Vector2(-400, 80)
+position = Vector2(-496, -128)
+
+[node name="PantallaS2" parent="." unique_id=1312994091 instance=ExtResource("9_xheqx")]
+position = Vector2(-496, -128)
 
 [node name="Pantalla3" parent="." unique_id=83180807 instance=ExtResource("3_ofv6v")]
-position = Vector2(-112, -224)
+position = Vector2(-208, -432)
 
 [node name="Pantalla4" parent="." unique_id=128641763 instance=ExtResource("4_47c5h")]
-position = Vector2(384, -96)
+position = Vector2(288, -304)
 
-[node name="PantallaS1" parent="." unique_id=805901518 instance=ExtResource("5_sgff0")]
+[node name="PantallaS3" parent="." unique_id=898142370 instance=ExtResource("5_sgff0")]
+position = Vector2(-96, -208)
 
 [node name="Pantalla5" parent="." unique_id=1963058411 instance=ExtResource("6_v10u1")]
-position = Vector2(-401, 384)
+position = Vector2(-496, 176)
 
-[node name="Pantalla6" parent="." unique_id=563658247 instance=ExtResource("7_47c5h")]
-position = Vector2(94, 510)
+[node name="Pantalla6" parent="." unique_id=2132617608 instance=ExtResource("8_sgff0")]
+position = Vector2(-496, 480)
 
-[node name="Pantalla7" parent="." unique_id=2132617608 instance=ExtResource("8_sgff0")]
-position = Vector2(-401, 686)
+[node name="Pantalla7" parent="." unique_id=563658247 instance=ExtResource("7_47c5h")]
+position = Vector2(0, 304)
+
+[node name="PantallaS4" parent="." unique_id=1743002678 instance=ExtResource("10_jep1t")]
+position = Vector2(-464, 320)
 
 [node name="Pantalla8" parent="." unique_id=700352425 instance=ExtResource("9_84bil")]
-position = Vector2(590, 510)
+position = Vector2(496, 304)
 
 [node name="Pantalla9" parent="." unique_id=1045537786 instance=ExtResource("9_sgff0")]
-position = Vector2(590, 208)
+position = Vector2(496, 0)

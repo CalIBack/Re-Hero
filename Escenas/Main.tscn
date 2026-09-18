@@ -19,6 +19,6 @@ unique_name_in_owner = true
 
 [node name="Jugador" parent="." unique_id=1940612453 instance=ExtResource("2_sem21")]
 unique_name_in_owner = true
-position = Vector2(-77, 337)
+position = Vector2(-172, 131)
 
 [node name="Hud" parent="." unique_id=1422294051 instance=ExtResource("5_3yqt6")]
