@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://d27ik4nd0b3ey"]
+
+[ext_resource type="Script" uid="uid://emo4g55iyi6x" path="res://Escenas/Personaje/jugador.gd" id="1_g87qj"]
+[ext_resource type="SpriteFrames" uid="uid://x4wftholtq3n" path="res://Escenas/Personaje/new_sprite_frames.tres" id="1_uhnff"]
+[ext_resource type="Material" uid="uid://cayi2icaj28qa" path="res://Escenas/Personaje/daño_shader_material.tres" id="2_e161w"]
+[ext_resource type="Material" uid="uid://d2ocyvw7essfv" path="res://Escenas/Personaje/cura_shader_material.tres" id="3_hppvc"]
+[ext_resource type="Texture2D" uid="uid://cxx77uy0cipq6" path="res://Sprites/BannerLampara.png" id="3_n6e5p"]
+[ext_resource type="Texture2D" uid="uid://dlobveriirbmh" path="res://Sprites/BannerHerrero.png" id="4_hppvc"]
+[ext_resource type="Texture2D" uid="uid://ckv7bc8yiilof" path="res://Sprites/BannerInteractivo.png" id="4_m61at"]
+[ext_resource type="Texture2D" uid="uid://dqn8ngnfu83bi" path="res://Sprites/BannerBloqueado.png" id="5_0w3uk"]
+[ext_resource type="AudioStream" uid="uid://6kfgodpjl04x" path="res://Audio/Ataque.wav" id="5_r1mad"]
+[ext_resource type="Texture2D" uid="uid://cjrkyso8nnif3" path="res://Sprites/BannerDesbloquear.png" id="6_3tj32"]
+[ext_resource type="AudioStream" uid="uid://c7yg03t7mgrb7" path="res://Audio/Escudo.wav" id="6_aca4k"]
+[ext_resource type="AudioStream" uid="uid://cp0obtqw68cvp" path="res://Audio/Danio.wav" id="7_lpfxk"]
+[ext_resource type="AudioStream" uid="uid://de8ltee7bmfyk" path="res://Audio/Esencia.wav" id="8_wihk5"]
+[ext_resource type="AudioStream" uid="uid://dfynofvxglkqy" path="res://Audio/Llave.wav" id="9_dwkqu"]
+[ext_resource type="AudioStream" uid="uid://hw4jhpd1qxe3" path="res://Audio/Bloqueado.wav" id="10_5yb0w"]
+[ext_resource type="AudioStream" uid="uid://dnivjlww7woap" path="res://Audio/Desbloqueo.wav" id="11_kbf0n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e161w"]
+radius = 3.0150757
+height = 12.060302
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvq8r"]
+radius = 3.0150757
+height = 10.050251
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m61at"]
+radius = 3.0150757
+height = 16.080402
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ton3q"]
+radius = 3.015076
+height = 16.080402
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj32t"]
+size = Vector2(2.7624297, 14.364635)
+
+[node name="Jugador" type="CharacterBody2D" unique_id=1940612453 node_paths=PackedStringArray("rotador", "anim", "hitbox_espada", "hitbox_escudo", "area_abajo", "area_arriba", "area_izquierda", "area_derecha", "banner")]
+collision_layer = 32
+collision_mask = 19
+floor_max_angle = 1.3718288
+platform_floor_layers = 4294967040
+script = ExtResource("1_g87qj")
+rotador = NodePath("Rotador")
+anim = NodePath("Rotador/AnimatedSprite2D")
+shader_danio = ExtResource("2_e161w")
+shader_curacion = ExtResource("3_hppvc")
+sfx_ataque = ExtResource("5_r1mad")
+sfx_escudo = ExtResource("6_aca4k")
+sfx_danio = ExtResource("7_lpfxk")
+sfx_esencia = ExtResource("8_wihk5")
+sfx_llave = ExtResource("9_dwkqu")
+sfx_bloqueado = ExtResource("10_5yb0w")
+sfx_desbloqueo = ExtResource("11_kbf0n")
+hitbox_espada = NodePath("Rotador/AtaqueHitbox2")
+hitbox_escudo = NodePath("Rotador/EscudoHitbox")
+area_abajo = NodePath("DanioHitboxAbajo")
+area_arriba = NodePath("DanioHitboxArriba")
+area_izquierda = NodePath("DanioHitboxIzquierda")
+area_derecha = NodePath("DanioHitboxDerecha")
+banner_lampara = ExtResource("3_n6e5p")
+banner_herrero = ExtResource("4_hppvc")
+banner_bloqueado = ExtResource("5_0w3uk")
+banner_desbloquear = ExtResource("6_3tj32")
+banner = NodePath("BannerInteractivo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=978928458]
+position = Vector2(1.9073486e-06, -1.1920929e-07)
+scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(2.3999984, 9.599999, -1.9073486e-06, 9.599999, -2.4000013, 9.599999, -4.800001, 8.799999, -5.6000013, 2.3999999, -5.600001, -1.5999998, -4.0000014, -6.3999996, -1.6000018, -9.599999, 1.599998, -9.599999, 3.9999983, -6.3999996, 5.5999985, -1.6469569, 5.5999975, 2.4, 4.7999983, 8.799999)
+
+[node name="DanioHitboxAbajo" type="Area2D" parent="." unique_id=1507051136]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DanioHitboxAbajo" unique_id=1029699578]
+position = Vector2(-7.1054274e-15, 9)
+rotation = 1.5707964
+scale = Vector2(0.995, 0.995)
+shape = SubResource("CapsuleShape2D_e161w")
+debug_color = Color(0, 18.892157, 18.892157, 0.5529412)
+
+[node name="DanioHitboxArriba" type="Area2D" parent="." unique_id=346225480]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DanioHitboxArriba" unique_id=487955596]
+position = Vector2(3.5527205e-15, -9)
+rotation = 1.5707964
+scale = Vector2(0.995, 0.995)
+shape = SubResource("CapsuleShape2D_rvq8r")
+debug_color = Color(0, 18.892157, 18.892157, 0.5529412)
+
+[node name="DanioHitboxDerecha" type="Area2D" parent="." unique_id=922763210]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DanioHitboxDerecha" unique_id=828906531]
+position = Vector2(5, 0)
+scale = Vector2(0.995, 0.995)
+shape = SubResource("CapsuleShape2D_m61at")
+debug_color = Color(0, 18.892157, 18.892157, 0.5529412)
+
+[node name="DanioHitboxIzquierda" type="Area2D" parent="." unique_id=1602260082]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DanioHitboxIzquierda" unique_id=979035248]
+position = Vector2(-5, 0)
+scale = Vector2(0.995, 0.995)
+shape = SubResource("CapsuleShape2D_ton3q")
+debug_color = Color(0, 18.892157, 18.892157, 0.5529412)
+
+[node name="Rotador" type="Node2D" parent="." unique_id=892150982]
+unique_name_in_owner = true
+
+[node name="AtaqueHitbox2" type="Area2D" parent="Rotador" unique_id=624028076]
+modulate = Color(1, 0.09803922, 0.02745098, 1)
+self_modulate = Color(1, 0.25490198, 0.02745098, 1)
+position = Vector2(-6.4623485e-27, -2.842171e-14)
+scale = Vector2(1.81, 1.81)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rotador/AtaqueHitbox2" unique_id=1412632674]
+position = Vector2(-3.8674011, -4.9723754)
+scale = Vector2(0.6906078, 0.6906078)
+polygon = PackedVector2Array(-9.600002, 10.399999, -11.200003, 5.599999, -9.600002, -0.80000067, -4.0000033, -5.6000004, 2.3999963, -8.8, 10.399996, -8.8, 16.799995, -8.8, 15.199995, -4.8, -3.33786e-06, 11.199999, -5.600003, 12.799998)
+
+[node name="EscudoHitbox" type="Area2D" parent="Rotador" unique_id=925093830]
+position = Vector2(-6.4623485e-27, -2.842171e-14)
+scale = Vector2(1.81, 1.81)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotador/EscudoHitbox" unique_id=1860883614]
+position = Vector2(-4.6961346, -0.5524865)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_lj32t")
+debug_color = Color(18.892157, 18.892157, 0, 0.5137255)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rotador" unique_id=1407694860]
+unique_name_in_owner = true
+position = Vector2(-1, 0)
+scale = Vector2(0.5623223, 0.5564804)
+sprite_frames = ExtResource("1_uhnff")
+animation = &"Idle"
+offset = Vector2(0, -10)
+
+[node name="BannerInteractivo" type="Sprite2D" parent="." unique_id=1082210139]
+position = Vector2(1.0658141e-14, -21)
+scale = Vector2(0.62499994, 0.6369048)
+texture = ExtResource("4_m61at")

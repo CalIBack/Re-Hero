@@ -3,6 +3,7 @@ extends CharacterBody2D
 const VELOCIDAD = 85.0
 const SALTO = -250.0
 const FRAMES_GRACIA_ATERRIZAJE := 3
+const TIEMPO_COYOTE := 0.12
 
 @export_group("Nodos Principales")
 @export var rotador: Node2D
@@ -46,6 +47,7 @@ const FRAMES_GRACIA_ATERRIZAJE := 3
 @export var banner_herrero: Texture2D
 @export var banner_bloqueado: Texture2D
 @export var banner_desbloquear: Texture2D
+@export var banner_palanca: Texture2D
 
 @export var banner: Sprite2D
 
@@ -65,6 +67,9 @@ var interactivo_cercano: Node2D = null
 var esquirlas_alma: int = 0
 var llaves: int = 0
 
+var bonus_arma: int = 10
+var bonus_armadura: int = 0
+
 var _atravesando_plataforma := false
 var _pos_y_caida_inicio := 0.0
 
@@ -81,6 +86,7 @@ var estado_transicionando := false
 var _anim_ataque_bloqueada := ""
 var _tiempo_restante_ataque := 0.0
 var _contador_aire := 0
+var _tiempo_coyote_restante := 0.0
 
 var _tiempo_flote_indicador := 0.0
 var _pos_y_base_indicador := 0.0
@@ -120,7 +126,7 @@ func _ready() -> void:
 	area_derecha.body_entered.connect(_recibir_danio.bind("derecha"))
 	
 	anim.animation_finished.connect(_al_terminar_animacion)
-	anim.frame_changed.connect(_al_cambiar_frame) # Conectamos la señal para el sonido de ataque exacto
+	anim.frame_changed.connect(_al_cambiar_frame)
 	
 	if banner:
 		_pos_y_base_indicador = banner.position.y
@@ -149,16 +155,10 @@ func usar_llave() -> bool:
 		return false
 
 func _physics_process(delta: float) -> void:
-	if estado_transicionando:
-		move_and_slide()
-		if not is_on_floor():
-			if anim.animation != "Salto": anim.play("Salto")
-			_controlar_frames_salto()
-		elif velocity.x != 0:
-			if anim.animation != "Correr": anim.play("Correr")
-		else:
-			if anim.animation != "Idle": anim.play("Idle")
-		return
+	if is_on_floor():
+		_tiempo_coyote_restante = TIEMPO_COYOTE
+	else:
+		_tiempo_coyote_restante -= delta
 
 	var estaba_en_el_suelo = is_on_floor()
 	var vel_y_previa = velocity.y
@@ -301,6 +301,8 @@ func _manejar_icono_interaccion(delta: float) -> void:
 		ya_abierto = true
 	elif "esta_bloqueada" in interactivo_cercano and not interactivo_cercano.esta_bloqueada:
 		ya_abierto = true
+	elif "esta_activada" in interactivo_cercano and interactivo_cercano.esta_activada:
+		ya_abierto = true
 
 	if ya_abierto:
 		banner.visible = false
@@ -321,6 +323,8 @@ func _manejar_icono_interaccion(delta: float) -> void:
 			banner.texture = banner_herrero
 		"lampara":
 			banner.texture = banner_lampara
+		"palanca":
+			banner.texture = banner_palanca
 		_:
 			banner.texture = null
 
@@ -405,8 +409,9 @@ func _manejar_salto() -> void:
 		_pos_y_caida_inicio = global_position.y
 		return
 		
-	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("arriba")) and is_on_floor():
+	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("arriba")) and _tiempo_coyote_restante > 0.0:
 		velocity.y = SALTO
+		_tiempo_coyote_restante = 0.0
 		
 	if (Input.is_action_just_released("ui_accept") or Input.is_action_just_released("arriba")) and velocity.y < 0:
 		velocity.y *= 0.5 
@@ -499,8 +504,8 @@ func _recibir_danio(_body: Node2D, lado_impacto: String) -> void:
 	tiempo_curacion = 0.0
 	
 	var danio_base = 15 
-	var reduccion = (resistencia * 5.0) / 100.0
-	var danio_recibido = int(danio_base * (1.0 - reduccion))
+	var reduccion = (bonus_armadura * (1.0 + resistencia * 0.10)) / 100.0
+	var danio_recibido = max(0, int(danio_base * (1.0 - reduccion)))
 	
 	hp_actual -= danio_recibido
 	vida_cambiada.emit(hp_actual, hp_maximo)
@@ -543,3 +548,11 @@ func _terminar_estado_herido() -> void:
 	elif area_izquierda.has_overlapping_bodies(): _recibir_danio(area_izquierda.get_overlapping_bodies()[0], "izquierda")
 	elif area_derecha.has_overlapping_bodies(): _recibir_danio(area_derecha.get_overlapping_bodies()[0], "derecha")
 	elif area_arriba.has_overlapping_bodies(): _recibir_danio(area_arriba.get_overlapping_bodies()[0], "arriba")
+
+func recalcular_stats() -> void:
+	var hp_max_anterior = hp_maximo
+	hp_maximo = 90 + (constitucion * 10)
+	var diferencia = hp_maximo - hp_max_anterior
+	if diferencia > 0:
+		hp_actual = min(hp_actual + diferencia, hp_maximo)
+	vida_cambiada.emit(hp_actual, hp_maximo)

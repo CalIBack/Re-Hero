@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xmsw2mrb572q"]
 
 [ext_resource type="Script" uid="uid://bdf0akkykty3n" path="res://Escenas/Plataformero/Interactivos/Escalera/escalera.gd" id="1_qhkyc"]
-[ext_resource type="Texture2D" uid="uid://c8v5fsi02quo3" path="res://Sprites/Escalera3.png" id="1_rsw5r"]
+[ext_resource type="Texture2D" uid="uid://c8v5fsi02quo3" path="res://Sprites/Plataformero/Escalera3.png" id="1_rsw5r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
 size = Vector2(16, 14.999981)

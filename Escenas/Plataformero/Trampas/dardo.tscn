@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1oqnw1ovoas0"]
 
 [ext_resource type="Script" uid="uid://bvn014axp7hed" path="res://Escenas/Plataformero/Trampas/dardo.gd" id="1_6iytf"]
-[ext_resource type="Texture2D" uid="uid://weu3cmfmlbyg" path="res://Sprites/Dardo.png" id="1_u4nuq"]
+[ext_resource type="Texture2D" uid="uid://weu3cmfmlbyg" path="res://Sprites/Plataformero/Dardo.png" id="1_u4nuq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
 size = Vector2(6, 4)

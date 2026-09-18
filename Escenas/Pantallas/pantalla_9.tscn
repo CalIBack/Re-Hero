@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dvg23ts2vd54q" path="res://Escenas/Plataformero/Trampas/trampa.tscn" id="3_a1sd5"]
 [ext_resource type="PackedScene" uid="uid://gxdiudbnv4he" path="res://Escenas/Plataformero/Trampas/placa.tscn" id="4_505id"]
 [ext_resource type="PackedScene" uid="uid://ca2xcwbc3pjbe" path="res://Escenas/Plataformero/salida.tscn" id="5_mq3wb"]
-[ext_resource type="PackedScene" uid="uid://d0fhic2t36g6v" path="res://Escenas/Plataformero/entrada.tscn" id="6_p6xuy"]
 [ext_resource type="PackedScene" path="res://Escenas/Plataformero/Enemigos/enemigo.tscn" id="7_y2jti"]
 
 [node name="Pantalla9" type="Node2D" unique_id=458890401]
@@ -57,11 +56,8 @@ position = Vector2(168, 156)
 rotation = 1.5707964
 nombre_pantalla_destino = "Pantalla8"
 
-[node name="Camara" parent="." unique_id=725594946 instance=ExtResource("6_p6xuy")]
-visible = false
-mira_a_la_derecha = false
-es_spawn_base = true
-
 [node name="Enemigo" parent="." unique_id=247240884 instance=ExtResource("7_y2jti")]
 position = Vector2(212, 64)
 scale = Vector2(1.1, 1.1)
+
+[node name="Camara" type="Marker2D" parent="." unique_id=2128524141]

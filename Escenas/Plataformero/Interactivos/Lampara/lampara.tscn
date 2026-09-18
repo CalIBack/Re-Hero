@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://bntfqc55nwmfq"]
 
-[ext_resource type="Texture2D" uid="uid://brskrv2f0jvgs" path="res://Sprites/lampara.png" id="1_ua80c"]
+[ext_resource type="Texture2D" uid="uid://brskrv2f0jvgs" path="res://Sprites/Plataformero/lampara.png" id="1_ua80c"]
+[ext_resource type="Script" uid="uid://bvmuxqcpc0lqr" path="res://Escenas/Plataformero/Interactivos/Lampara/lampara.gd" id="1_xv7rb"]
 
-[node name="Lampara" type="Node2D" unique_id=179899171]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+size = Vector2(20, 22)
+
+[node name="Lampara" type="Area2D" unique_id=254711786]
+collision_mask = 32
+script = ExtResource("1_xv7rb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1727266777]
-position = Vector2(3.7252903e-09, 8.195639e-08)
+position = Vector2(0.047619224, -3.9999988)
 scale = Vector2(0.7559524, 0.75000006)
 texture = ExtResource("1_ua80c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1023114526]
+position = Vector2(0.047619343, -2.999999)
+shape = SubResource("RectangleShape2D_orvxw")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gxdiudbnv4he"]
 
 [ext_resource type="Script" uid="uid://cs50tsl08wnfv" path="res://Escenas/Plataformero/Trampas/placa.gd" id="1_gxarr"]
-[ext_resource type="Texture2D" uid="uid://ns4pv0q5ixxm" path="res://Sprites/Placa.png" id="2_wlg18"]
+[ext_resource type="Texture2D" uid="uid://ns4pv0q5ixxm" path="res://Sprites/Plataformero/Placa.png" id="2_wlg18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
 size = Vector2(10, 2)

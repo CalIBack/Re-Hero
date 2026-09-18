@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlk3qs4gr2u80"]
 
-[ext_resource type="Texture2D" uid="uid://blmqpjlobtqhs" path="res://Sprites/Urna.png" id="1_3wm2g"]
+[ext_resource type="Texture2D" uid="uid://blmqpjlobtqhs" path="res://Sprites/Plataformero/Urna.png" id="1_3wm2g"]
 [ext_resource type="Script" uid="uid://2ef2hbbvbp00" path="res://Escenas/Plataformero/Interactivos/destruible_base.gd" id="1_angqr"]
 [ext_resource type="PackedScene" uid="uid://bbsw5qbvdg20b" path="res://Escenas/Plataformero/Interactivos/EsquirlaEsencia/esquirla.tscn" id="2_o4djo"]
 

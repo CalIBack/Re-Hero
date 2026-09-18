@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ca2xcwbc3pjbe" path="res://Escenas/Plataformero/salida.tscn" id="3_7awwa"]
 [ext_resource type="PackedScene" uid="uid://dvg23ts2vd54q" path="res://Escenas/Plataformero/Trampas/trampa.tscn" id="3_yglre"]
 [ext_resource type="PackedScene" uid="uid://gxdiudbnv4he" path="res://Escenas/Plataformero/Trampas/placa.tscn" id="4_4pfpm"]
-[ext_resource type="PackedScene" uid="uid://d0fhic2t36g6v" path="res://Escenas/Plataformero/entrada.tscn" id="6_ubpva"]
 
 [node name="Pantalla5" type="Node2D" unique_id=458890401]
 
@@ -55,7 +54,4 @@ position = Vector2(-216, 156)
 rotation = 1.5707964
 nombre_pantalla_destino = "Pantalla6"
 
-[node name="Camara" parent="." unique_id=725594946 instance=ExtResource("6_ubpva")]
-visible = false
-mira_a_la_derecha = false
-es_spawn_base = true
+[node name="Camara" type="Marker2D" parent="." unique_id=1916346545]

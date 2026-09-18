@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cr6cugkv1c6r"]
 
-[ext_resource type="Texture2D" uid="uid://bfe0f3su77fw" path="res://Sprites/ParedRompible.png" id="1_c8r01"]
+[ext_resource type="Texture2D" uid="uid://bfe0f3su77fw" path="res://Sprites/Plataformero/ParedRompible.png" id="1_c8r01"]
 [ext_resource type="Script" uid="uid://d1il6psc8h318" path="res://Escenas/Plataformero/Interactivos/ParedRompible/pared_rompible.gd" id="1_unckn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]

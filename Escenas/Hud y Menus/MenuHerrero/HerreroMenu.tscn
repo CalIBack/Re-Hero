@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://4dhagx3pgduk"]
+
+[ext_resource type="Script" uid="uid://va3eisair1ob" path="res://Escenas/Hud y Menus/MenuHerrero/herrero_menu.gd" id="1_vwy7o"]
+[ext_resource type="PackedScene" uid="uid://b1e08vh5skkte" path="res://Escenas/Hud y Menus/FilaStat.tscn" id="2_qmxct"]
+
+[node name="HerreroMenu" type="CanvasLayer" unique_id=1883837573 node_paths=PackedStringArray("lista_articulos", "label_esquirlas", "boton_cerrar")]
+script = ExtResource("1_vwy7o")
+lista_articulos = NodePath("ColorRect/VBoxContainer")
+label_esquirlas = NodePath("ColorRect/VBoxContainer/Esquirlas")
+boton_cerrar = NodePath("ColorRect/VBoxContainer/Cerrar")
+fila_stat_escena = ExtResource("2_qmxct")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1332035687]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09411765, 0.078431375, 0.14509805, 0.6745098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=777186842]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="ColorRect/VBoxContainer" unique_id=705362838]
+layout_mode = 2
+text = "Mejora tu Equipo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Esquirlas" type="Label" parent="ColorRect/VBoxContainer" unique_id=1170124155]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Cerrar" type="Button" parent="ColorRect/VBoxContainer" unique_id=394100277]
+layout_mode = 2
+text = "Cerrar"

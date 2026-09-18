@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dvg23ts2vd54q" path="res://Escenas/Plataformero/Trampas/trampa.tscn" id="3_kppom"]
 [ext_resource type="PackedScene" uid="uid://gxdiudbnv4he" path="res://Escenas/Plataformero/Trampas/placa.tscn" id="4_cg1mo"]
 [ext_resource type="PackedScene" uid="uid://ca2xcwbc3pjbe" path="res://Escenas/Plataformero/salida.tscn" id="5_y3xdf"]
-[ext_resource type="PackedScene" uid="uid://d0fhic2t36g6v" path="res://Escenas/Plataformero/entrada.tscn" id="6_8vsan"]
 [ext_resource type="PackedScene" uid="uid://cr6cugkv1c6r" path="res://Escenas/Plataformero/Interactivos/ParedRompible/paredRompible.tscn" id="7_5g4sa"]
 
 [node name="Pantalla7" type="Node2D" unique_id=458890401]
@@ -85,10 +84,6 @@ nombre_pantalla_destino = "Pantalla8"
 position = Vector2(-252, 24)
 nombre_pantalla_destino = "PantallaS2"
 
-[node name="Camara" parent="." unique_id=725594946 instance=ExtResource("6_8vsan")]
-mira_a_la_derecha = false
-es_spawn_base = true
-
 [node name="ParedSecreta" type="Node2D" parent="." unique_id=279850439]
 
 [node name="ParedRompible" parent="." unique_id=316754497 instance=ExtResource("7_5g4sa")]
@@ -96,3 +91,5 @@ position = Vector2(-248, 24)
 
 [node name="ParedRompible2" parent="." unique_id=1864584921 instance=ExtResource("7_5g4sa")]
 position = Vector2(-248, 40)
+
+[node name="Camara" type="Marker2D" parent="." unique_id=1982408356]

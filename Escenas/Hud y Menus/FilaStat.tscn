@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1e08vh5skkte"]
+
+[node name="FilaStat" type="HBoxContainer" unique_id=1591107468]
+
+[node name="Nombre" type="Label" parent="." unique_id=930539835]
+layout_mode = 2
+
+[node name="Valor" type="Label" parent="." unique_id=264295300]
+layout_mode = 2
+
+[node name="Subir" type="Button" parent="." unique_id=1081789046]
+layout_mode = 2
+
+[node name="Precio" type="Label" parent="." unique_id=350127355]
+layout_mode = 2

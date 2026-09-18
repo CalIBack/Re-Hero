@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cydfx40xmdktm"]
+
+[ext_resource type="Script" uid="uid://cluppljlbfuey" path="res://Escenas/Plataformero/Interactivos/Palanca/palanca.gd" id="1_f6k1y"]
+[ext_resource type="Texture2D" uid="uid://b0w0jn41qry33" path="res://Sprites/Plataformero/Palanca.png" id="2_n5d70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq5q3"]
+
+[node name="Palanca" type="Area2D" unique_id=713769206 node_paths=PackedStringArray("sprite")]
+collision_mask = 32
+script = ExtResource("1_f6k1y")
+sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=655678317]
+shape = SubResource("RectangleShape2D_qq5q3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1852462289]
+texture = ExtResource("2_n5d70")

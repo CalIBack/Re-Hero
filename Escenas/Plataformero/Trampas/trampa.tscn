@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvg23ts2vd54q"]
 
-[ext_resource type="Texture2D" uid="uid://lnmh02d8ebya" path="res://Sprites/Trampa_Dardo.png" id="1_jmn16"]
+[ext_resource type="Texture2D" uid="uid://lnmh02d8ebya" path="res://Sprites/Plataformero/Trampa_Dardo.png" id="1_jmn16"]
 [ext_resource type="Script" uid="uid://bk8f1rlysbw2l" path="res://Escenas/Plataformero/Trampas/trampa.gd" id="1_y141n"]
 [ext_resource type="PackedScene" uid="uid://c1oqnw1ovoas0" path="res://Escenas/Plataformero/Trampas/dardo.tscn" id="2_ji7ic"]
 

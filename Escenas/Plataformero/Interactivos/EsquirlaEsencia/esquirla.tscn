@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbsw5qbvdg20b"]
 
 [ext_resource type="Script" uid="uid://chclhagyoymqo" path="res://Escenas/Plataformero/Interactivos/EsquirlaEsencia/esquirla.gd" id="1_5wiq2"]
-[ext_resource type="Texture2D" uid="uid://dp7ecj6y1gi0g" path="res://Sprites/Esencia.png" id="1_kbn7i"]
+[ext_resource type="Texture2D" uid="uid://dp7ecj6y1gi0g" path="res://Sprites/Plataformero/Esencia.png" id="1_kbn7i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj32t"]
 size = Vector2(8, 12)

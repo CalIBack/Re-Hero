@@ -24,17 +24,15 @@ extends Node2D
 @onready var boton_poseer_no: Button = %BotonPoseerNo
 
 const ACCIONES_HABILIDAD := ["habilidad_1", "habilidad_2", "habilidad_3"]
-const DURACION_DESCANSO := 2.0 # segundos que se mantiene la pose de curación
+const DURACION_DESCANSO := 2.0
 
 const DURACION_BANNER := 1.8
-const DURACION_COMBO_JUGADOR := 4.0 # tiempo libre despues del golpe automático
+const DURACION_COMBO_JUGADOR := 4.0
 const DURACION_VENTANA_ENEMIGO := 2.0
 const DANIO_BASICO_ENEMIGO := 10
 
 const DURACION_EMBESTIDA := 0.15
 
-# Distancia de Jugador/Enemigo al centro de la pantalla, tal como quedaron
-# ubicados en el editor (que muestra el lienzo declarado, 612x420).
 const DESPLAZAMIENTO_JUGADOR_X := -156.0
 const DESPLAZAMIENTO_ENEMIGO_X := 153.0
 
@@ -43,21 +41,35 @@ var posicion_inicial_enemigo: Vector2
 var jugador_hp: int
 var enemigo_hp: int
 var combate_terminado := false
-var ocupado := false # true mientras se reproduce una animación, bloquea nuevas habilidades
-var puede_actuar := false # true solo durante el tramo de combo libre de tu turno
-var _animando_golpe_basico := false # true mientras el Ataque en curso es el golpe rápido
+var ocupado := false
+var puede_actuar := false
+var _animando_golpe_basico := false
 
-# Cada habilidad es un diccionario: nombre, daño al enemigo, curación al jugador,
-# cooldown_max (segundos que tarda en volver a estar disponible) y cooldown_actual.
+# Stats del jugador traídas desde EstadoJuego (persisten aunque Main.tscn
+# se haya destruido al entrar a combate). Si todavía no existen esos campos
+# en EstadoJuego, usamos un valor por defecto razonable para no romper nada.
+var bonus_arma: int = 10
+var fuerza_jugador: int = 1
+var bonus_armadura: int = 0
+var resistencia_jugador: int = 1
+
+# Cada habilidad de ataque ya NO tiene un daño fijo: "multiplicador_danio"
+# se multiplica por el daño real del arma (bonus_arma * bono de fuerza).
+# Golpe Rápido = 1x ese daño, Golpe Fuerte = 2x (el doble, como pediste).
 var habilidades: Array[Dictionary] = [
-	{"nombre": "[1] Golpe Rápido", "danio": 10, "curacion": 0, "cooldown_max": 1.0, "cooldown_actual": 0.0, "embestida": 45.0},
-	{"nombre": "[2] Golpe Fuerte", "danio": 25, "curacion": 0, "cooldown_max": 6.0, "cooldown_actual": 0.0, "embestida": 90.0},
-	{"nombre": "[3] Curación", "danio": 0, "curacion": 15, "cooldown_max": 10.0, "cooldown_actual": 0.0, "embestida": 0.0},
+	{"nombre": "[1] Golpe Rápido", "multiplicador_danio": 1.0, "curacion": 0, "cooldown_max": 1.0, "cooldown_actual": 0.0, "embestida": 45.0},
+	{"nombre": "[2] Golpe Fuerte", "multiplicador_danio": 2.0, "curacion": 0, "cooldown_max": 6.0, "cooldown_actual": 0.0, "embestida": 90.0},
+	{"nombre": "[3] Curación", "multiplicador_danio": 0.0, "curacion": 15, "cooldown_max": 10.0, "cooldown_actual": 0.0, "embestida": 0.0},
 ]
 
 func _ready() -> void:
 	jugador_hp = jugador_hp_max
 	enemigo_hp = enemigo_hp_max
+
+	bonus_arma = EstadoJuego.bonus_arma_guardado if "bonus_arma_guardado" in EstadoJuego else 10
+	fuerza_jugador = EstadoJuego.fuerza_guardada if "fuerza_guardada" in EstadoJuego else 1
+	bonus_armadura = EstadoJuego.bonus_armadura_guardado if "bonus_armadura_guardado" in EstadoJuego else 0
+	resistencia_jugador = EstadoJuego.resistencia_guardada if "resistencia_guardada" in EstadoJuego else 1
 
 	_centrar_segun_pantalla_real()
 
@@ -77,11 +89,6 @@ func _ready() -> void:
 	_actualizar_hud()
 	_iniciar_combate()
 
-# El HUD se autoajusta al ancho real de la ventana porque usa anclas, pero
-# Fondo/Jugador/Enemigo tienen posición fija de Node2D. Con
-# stretch/aspect="expand" y una ventana más ancha que el lienzo declarado,
-# el centro real de pantalla no coincide con el que se ve en el editor.
-# Recalculamos el centro real y reubicamos todo en base a eso.
 func _centrar_segun_pantalla_real() -> void:
 	var centro_real_x = get_viewport_rect().size.x / 2.0
 	fondo.position.x = centro_real_x
@@ -97,7 +104,6 @@ func reproducir_sfx(pista: AudioStream) -> void:
 	sfx_player.play()
 	sfx_player.finished.connect(sfx_player.queue_free)
 
-# Mismo frame (4) en el que jugador.gd dispara el sonido del golpe en el plataformero.
 func _al_cambiar_frame_jugador() -> void:
 	if anim_jugador.animation == "Ataque" and anim_jugador.frame == 4 and _animando_golpe_basico:
 		reproducir_sfx(sfx_ataque)
@@ -116,9 +122,17 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed(ACCIONES_HABILIDAD[i]):
 			_usar_habilidad(i)
 
-# ----------------------------------------------------
-# BUCLE DE TURNOS
-# ----------------------------------------------------
+func _calcular_danio_ataque(multiplicador_habilidad: float) -> int:
+	var bono_fuerza = 1.0 + (fuerza_jugador * 0.10)
+	return int(bonus_arma * bono_fuerza * multiplicador_habilidad)
+
+func _jugador_recibe_danio(danio_base: int) -> void:
+	var reduccion = (bonus_armadura * (1.0 + resistencia_jugador * 0.10)) / 100.0
+	var danio_final = max(0, int(danio_base * (1.0 - reduccion)))
+	jugador_hp = max(jugador_hp - danio_final, 0)
+	label_mensaje.text = "El enemigo golpeó: %d de daño" % danio_final
+	_actualizar_hud()
+
 func _iniciar_combate() -> void:
 	label_banner.text = "¡Inicia la pelea!"
 	label_banner.show()
@@ -136,7 +150,7 @@ func _turno_jugador() -> void:
 	label_mensaje.text = "¡Tu turno!"
 	_actualizar_hud()
 
-	await _ejecutar_habilidad(0) # golpe rápido automático, marca el inicio del turno
+	await _ejecutar_habilidad(0)
 	if combate_terminado:
 		return
 
@@ -159,15 +173,10 @@ func _turno_enemigo() -> void:
 	await tween_vuelta.finished
 	anim_enemigo.play("Idle")
 
-	jugador_hp = max(jugador_hp - DANIO_BASICO_ENEMIGO, 0)
-	label_mensaje.text = "El enemigo golpeó: %d de daño" % DANIO_BASICO_ENEMIGO
-	_actualizar_hud()
+	_jugador_recibe_danio(DANIO_BASICO_ENEMIGO)
 
 	await get_tree().create_timer(DURACION_VENTANA_ENEMIGO).timeout
 
-# ----------------------------------------------------
-# HABILIDADES DEL JUGADOR
-# ----------------------------------------------------
 func _usar_habilidad(indice: int) -> void:
 	if not puede_actuar or combate_terminado or ocupado:
 		return
@@ -180,9 +189,10 @@ func _ejecutar_habilidad(indice: int) -> void:
 
 	var es_curacion = habilidad["curacion"] > 0
 
-	if habilidad["danio"] > 0:
-		enemigo_hp = max(enemigo_hp - habilidad["danio"], 0)
-		label_mensaje.text = "Usaste %s: %d de daño" % [habilidad["nombre"], habilidad["danio"]]
+	if habilidad["multiplicador_danio"] > 0.0:
+		var danio = _calcular_danio_ataque(habilidad["multiplicador_danio"])
+		enemigo_hp = max(enemigo_hp - danio, 0)
+		label_mensaje.text = "Usaste %s: %d de daño" % [habilidad["nombre"], danio]
 	elif es_curacion:
 		jugador_hp = min(jugador_hp + habilidad["curacion"], jugador_hp_max)
 		label_mensaje.text = "Usaste %s: +%d HP" % [habilidad["nombre"], habilidad["curacion"]]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d14pru352pw3s" path="res://Escenas/main.gd" id="1_j5xpj"]
 [ext_resource type="AudioStream" uid="uid://b34v0es06obyn" path="res://Audio/DungeonBG.mp3" id="2_mbvap"]
 [ext_resource type="PackedScene" uid="uid://d27ik4nd0b3ey" path="res://Escenas/Personaje/jugador.tscn" id="2_sem21"]
-[ext_resource type="PackedScene" uid="uid://jmrouxttxlpm" path="res://Escenas/Hud.tscn" id="5_3yqt6"]
+[ext_resource type="PackedScene" uid="uid://jmrouxttxlpm" path="res://Escenas/Hud y Menus/Hud.tscn" id="5_3yqt6"]
 [ext_resource type="PackedScene" uid="uid://cmk10ire38f3x" path="res://Escenas/Plataformero/camera_2d.tscn" id="7_bgy44"]
 [ext_resource type="PackedScene" uid="uid://tw7dcfkr266s" path="res://Escenas/Pantallas/Esquema.tscn" id="9_a5a2i"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvf75cby14ef8"]
 
-[ext_resource type="Texture2D" uid="uid://qmx7g6coclw0" path="res://Sprites/Escalera2.png" id="1_flq0r"]
+[ext_resource type="Texture2D" uid="uid://qmx7g6coclw0" path="res://Sprites/Plataformero/Escalera2.png" id="1_flq0r"]
 [ext_resource type="Script" uid="uid://bdf0akkykty3n" path="res://Escenas/Plataformero/Interactivos/Escalera/escalera.gd" id="1_vab2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]

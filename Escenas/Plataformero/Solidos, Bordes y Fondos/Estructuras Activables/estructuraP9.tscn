@@ -1,0 +1,24 @@
+[gd_scene format=4 uid="uid://c0p64tsgxti48"]
+
+[ext_resource type="TileSet" uid="uid://eddv30wato5g" path="res://Tilesets/demo.tres" id="1_kbcov"]
+[ext_resource type="Script" uid="uid://cnf2nwj4yvo8a" path="res://Escenas/Plataformero/Solidos, Bordes y Fondos/Estructuras Activables/estructura_p_9.gd" id="2_e6ukx"]
+[ext_resource type="PackedScene" uid="uid://dmr2jn8q2apd5" path="res://Escenas/Plataformero/Solidos, Bordes y Fondos/bordes.tscn" id="2_kwrx7"]
+
+[node name="EstructuraP9" type="Node2D" unique_id=110194716 node_paths=PackedStringArray("bordes", "solidos", "interactivos")]
+script = ExtResource("2_e6ukx")
+bordes = NodePath("Bordes")
+solidos = NodePath("Solidos")
+interactivos = NodePath("Interactivos")
+
+[node name="Bordes" parent="." unique_id=1702401186 instance=ExtResource("2_kwrx7")]
+tile_map_data = PackedByteArray("AADy//3/BAACAAEAAAA=")
+
+[node name="Solidos" type="TileMapLayer" parent="." unique_id=963413358]
+tile_map_data = PackedByteArray("AAAKAPr/BAACAAEAAAAIAPr/BAACAAEAAAAJAPr/BAACAAEAAAAHAPr/BAACAAEAAADy//3/BAACAAEAAAD0//3/BAACAAEAAAD1//3/BAACAAEAAAD2//3/BAACAAEAAAD3//3/BAACAAEAAAD4//3/BAACAAEAAAD5//3/BAACAAEAAAD6//3/BAACAAEAAAD7//3/BAACAAEAAAD8//3/BAACAAEAAAD9//3/BAACAAEAAAD+//3/BAACAAEAAAD///3/BAACAAEAAAAAAP3/BAACAAEAAAABAPz/BAAFAAEAAAACAPv/BAAFAAEAAAADAPr/BAAFAAEAAAAEAPr/BAACAAEAAAAFAPr/BAACAAEAAAAGAPr/BAACAAEAAAABAP3/BAAFAAIAAAACAPz/BAAFAAIAAAADAPv/BAAFAAIAAADz//3/BAACAAEAAAA=")
+enabled = false
+tile_set = ExtResource("1_kbcov")
+
+[node name="Interactivos" type="TileMapLayer" parent="." unique_id=1144132779]
+tile_map_data = PackedByteArray("AADy//3/AQAAAAAACADy//7/AQAAAAAABwDy////AQAAAAAABwDy/wAAAQAAAAAABwDy/wEAAQAAAAAABwDy/wIAAQAAAAAABwDy/wMAAQAAAAAABwDy/wQAAQAAAAAABwDy/wUAAQAAAAAABwDy/wYAAQAAAAAABwDy/wcAAQAAAAAABwDy/wgAAQAAAAAAAwA=")
+enabled = false
+tile_set = ExtResource("1_kbcov")

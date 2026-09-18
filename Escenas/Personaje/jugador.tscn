@@ -4,18 +4,19 @@
 [ext_resource type="SpriteFrames" uid="uid://x4wftholtq3n" path="res://Escenas/Personaje/new_sprite_frames.tres" id="1_uhnff"]
 [ext_resource type="Material" uid="uid://cayi2icaj28qa" path="res://Escenas/Personaje/daño_shader_material.tres" id="2_e161w"]
 [ext_resource type="Material" uid="uid://d2ocyvw7essfv" path="res://Escenas/Personaje/cura_shader_material.tres" id="3_hppvc"]
-[ext_resource type="Texture2D" uid="uid://cxx77uy0cipq6" path="res://Sprites/BannerLampara.png" id="3_n6e5p"]
-[ext_resource type="Texture2D" uid="uid://dlobveriirbmh" path="res://Sprites/BannerHerrero.png" id="4_hppvc"]
-[ext_resource type="Texture2D" uid="uid://ckv7bc8yiilof" path="res://Sprites/BannerInteractivo.png" id="4_m61at"]
-[ext_resource type="Texture2D" uid="uid://dqn8ngnfu83bi" path="res://Sprites/BannerBloqueado.png" id="5_0w3uk"]
+[ext_resource type="Texture2D" uid="uid://cxx77uy0cipq6" path="res://Sprites/Banners/BannerLampara.png" id="3_n6e5p"]
+[ext_resource type="Texture2D" uid="uid://dlobveriirbmh" path="res://Sprites/Banners/BannerHerrero.png" id="4_hppvc"]
+[ext_resource type="Texture2D" uid="uid://ckv7bc8yiilof" path="res://Sprites/Banners/BannerInteractivo.png" id="4_m61at"]
+[ext_resource type="Texture2D" uid="uid://dqn8ngnfu83bi" path="res://Sprites/Banners/BannerBloqueado.png" id="5_0w3uk"]
 [ext_resource type="AudioStream" uid="uid://6kfgodpjl04x" path="res://Audio/Ataque.wav" id="5_r1mad"]
-[ext_resource type="Texture2D" uid="uid://cjrkyso8nnif3" path="res://Sprites/BannerDesbloquear.png" id="6_3tj32"]
+[ext_resource type="Texture2D" uid="uid://cjrkyso8nnif3" path="res://Sprites/Banners/BannerDesbloquear.png" id="6_3tj32"]
 [ext_resource type="AudioStream" uid="uid://c7yg03t7mgrb7" path="res://Audio/Escudo.wav" id="6_aca4k"]
 [ext_resource type="AudioStream" uid="uid://cp0obtqw68cvp" path="res://Audio/Danio.wav" id="7_lpfxk"]
 [ext_resource type="AudioStream" uid="uid://de8ltee7bmfyk" path="res://Audio/Esencia.wav" id="8_wihk5"]
 [ext_resource type="AudioStream" uid="uid://dfynofvxglkqy" path="res://Audio/Llave.wav" id="9_dwkqu"]
 [ext_resource type="AudioStream" uid="uid://hw4jhpd1qxe3" path="res://Audio/Bloqueado.wav" id="10_5yb0w"]
 [ext_resource type="AudioStream" uid="uid://dnivjlww7woap" path="res://Audio/Desbloqueo.wav" id="11_kbf0n"]
+[ext_resource type="Texture2D" uid="uid://doxdha1nkywxm" path="res://Sprites/Banners/BannerPalanca.png" id="15_5gfo2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e161w"]
 radius = 3.0150757
@@ -63,6 +64,7 @@ banner_lampara = ExtResource("3_n6e5p")
 banner_herrero = ExtResource("4_hppvc")
 banner_bloqueado = ExtResource("5_0w3uk")
 banner_desbloquear = ExtResource("6_3tj32")
+banner_palanca = ExtResource("15_5gfo2")
 banner = NodePath("BannerInteractivo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=978928458]

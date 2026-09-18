@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://7nn1j1xnaui2"]
+
+[ext_resource type="Texture2D" uid="uid://c7w58qheto624" path="res://Sprites/Herrero.png" id="1_dyyt6"]
+[ext_resource type="Script" uid="uid://cdl8wc0pxiq4r" path="res://Escenas/Plataformero/Interactivos/Herrero/herrero.gd" id="1_o677e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+size = Vector2(152, 92)
+
+[node name="Herrero" type="Area2D" unique_id=2029330968]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_o677e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=448030695]
+position = Vector2(-3.9339066e-06, 1.9999995)
+scale = Vector2(1.0133333, 1.0109891)
+texture = ExtResource("1_dyyt6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579615580]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_orvxw")

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bquq1luf3ds78"]
 
-[ext_resource type="Texture2D" uid="uid://bp1svonedpge8" path="res://Sprites/CofreCerrado.png" id="1_brvda"]
+[ext_resource type="Texture2D" uid="uid://bp1svonedpge8" path="res://Sprites/Plataformero/CofreCerrado.png" id="1_brvda"]
 [ext_resource type="Script" uid="uid://cgegjfq5710rp" path="res://Escenas/Plataformero/Interactivos/Cofre/cofre.gd" id="1_vtphl"]
 [ext_resource type="PackedScene" uid="uid://bbsw5qbvdg20b" path="res://Escenas/Plataformero/Interactivos/EsquirlaEsencia/esquirla.tscn" id="2_lu5ts"]
-[ext_resource type="Texture2D" uid="uid://dt7p1vuh1yomb" path="res://Sprites/CofreAbierto.png" id="2_ucwla"]
+[ext_resource type="Texture2D" uid="uid://dt7p1vuh1yomb" path="res://Sprites/Plataformero/CofreAbierto.png" id="2_ucwla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr2mr"]
 size = Vector2(16, 12)
@@ -12,7 +12,6 @@ size = Vector2(16, 12)
 size = Vector2(32, 24)
 
 [node name="Cofre" type="RigidBody2D" unique_id=36336866 node_paths=PackedStringArray("sprite_abierto", "sprite_cerrado", "area_deteccion", "spawn_punto")]
-position = Vector2(0, -3)
 collision_mask = 31
 sleeping = true
 can_sleep = false
